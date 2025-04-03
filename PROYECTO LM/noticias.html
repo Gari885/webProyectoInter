@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+  <title>Voluntariado Cuatrovientos</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="./images/ICONO4V.png" type="image/png">
+  <link rel="stylesheet" href="./bulma.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://kit.fontawesome.com/75419c7891.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <input type="checkbox" id="modalCheckboxInicio" class="is-hidden">
+  <input type="checkbox" id="modalCheckboxRegistro" class="is-hidden">
+
+
+  <div class="modal inicioSesion">
+    <div class="modal-card inicioSesion">
+      <header class="modal-card-head">
+        <p class="modal-card-title has-text-centered">Inicio de Sesión</p>
+        <label for="modalCheckboxInicio" class="delete" aria-label="close"></label>
+      </header>
+      <div class="modal-card-body">
+        <form action="./se_busca_admin.html" method="POST">
+          <div class="field">
+            <label class="label">Correo electrónico:</label>
+            <div class="control">
+              <input class="input" type="email" name="email" placeholder="correo@ejemplo.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Contraseña:</label>
+            <div class="control">
+              <input class="input" type="password" name="password" placeholder="Tu contraseña" required>
+            </div>
+          </div>
+          <div class="field">
+            <button type="submit" class="button is-link is-fullwidth">Acceder</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal registro">
+    <div class="modal-card registro">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Hazte voluntario/a y marca la diferencia!</p>
+        <label for="modalCheckboxRegistro" class="delete" aria-label="close"></label>
+      </header>
+      <div class="modal-card-body">
+        <p class="intro-text">Envía tu candidatura para unirte a nuestro equipo de voluntariado,
+          una vez revisado te enviaremos un correo electrónico con los pasos a seguir.</p>
+        <form action="./index.html" method="POST">
+          <div class="field">
+            <label class="label">Nombre*</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Introduce tu nombre" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Apellidos*</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Introduce tus apellidos" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Edad*</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Introduce tu edad" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Email*</label>
+            <div class="control has-icons-left">
+              <input class="input" type="email" placeholder="Introduce tu correo electrónico" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Teléfono*</label>
+            <div class="control has-icons-left">
+              <input class="input" type="tel" placeholder="Número de teléfono" pattern="[0-9]{9}" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-phone"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Curso*</label>
+            <div class="control">
+              <div class="select">
+                <select required>
+                  <option value="">Selecciona tu Curso</option>
+                  <option value="CFS Administración y Finanzas DUAL">CFS Administración y Finanzas DUAL</option>
+                  <option value="CFS Comercio Internacional DUAL BILINGÜE">CFS Comercio Internacional DUAL BILINGÜE
+                  </option>
+                  <option value="CFS Gestión de Ventas y Espacios Comerciales DUAL">CFS Gestión de Ventas y Espacios
+                    Comerciales DUAL</option>
+                  <option value="CFS Transporte y Logística DUAL">CFS Transporte y Logística DUAL</option>
+                  <option value="CFS Transporte y Logística Virtual">CFS Transporte y Logística Virtual</option>
+                  <option value="CFS Administración de Sistemas Informáticos en Red DUAL">CFS Administración de Sistemas
+                    Informáticos en Red DUAL</option>
+                  <option value="CFS Desarrollo de Aplicaciones Multiplataforma DUAL">CFS Desarrollo de Aplicaciones
+                    Multiplataforma DUAL</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">¿En qué año estas?*</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="curso" value="si" required>
+                Primero
+              </label>
+              <label class="radio">
+                <input type="radio" name="curso" value="no" required>
+                Segundo
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">¿Tienes experiencia previa?</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Disponibilidad semanal*</label>
+            <div class="control">
+              <div class="select">
+                <select required>
+                  <option value="">Selecciona</option>
+                  <option value="1-2 horas">1-2 horas</option>
+                  <option value="3-4 horas">3-4 horas</option>
+                  <option value="+5 horas">+5 horas</option>
+                  <option value="1-2 horas">Talleres puntuales</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">¿Tienes coche propio?*</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="coche" value="si" required>
+                Sí
+              </label>
+              <label class="radio">
+                <input type="radio" name="coche" value="no" required>
+                No
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">¿Qué tipo de voluntariado te gustaría hacer?*</label>
+            <div class="control">
+              <div class="select">
+                <select required>
+                  <option value="">Tipos</option>
+                  <option value="Social">Social</option>
+                  <option value="Educativo">Educativo</option>
+                  <option value="Cultural">Cultural</option>
+                  <option value="Ambiental">Ambiental</option>
+                  <option value="Salud">Salud</option>
+                  <option value="Internacional">Internacional</option>
+                  <option value="Deportivo">Deportivo</option>
+                  <option value="Digital">Digital</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">¿Estarías interesado/a en hacer voluntariado técnico?*</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="voluntariado técnico" value="si" required>
+                Sí
+              </label>
+              <label class="radio">
+                <input type="radio" name="voluntariado técnico" value="no" required>
+                No
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">¿Cuales son los conocimientos técnicos que podrías aportar?</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+          </div>
+
+          <footer class="modal-card-foot">
+            <div class="field">
+              <button type="submit" class="button is-link is-fullwidth">Enviar solicitud</button>
+            </div>
+            <div class="footer-logo-container">
+              <img src="./images/LOGO4V.png" alt="Voluntariado Cuatrovientos" class="footer-logo">
+            </div>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero is-light has-text-weight-bold">
+    <div class="hero-head">
+      <div class="navbar container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./index.html">
+            <img src="./images/LOGO4V.png" alt="Logo cuatrovientos">
+          </a>
+          <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <label for="modalCheckboxRegistro" class="button is-info">Hazte Voluntario</label>
+                <label for="modalCheckboxInicio" class="button is-dark">Iniciar Sesión</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-footer">
+      <nav class="navbar is-light" aria-label="main navigation">
+        <div class="container is-max-desktop">
+          <div class="navbar-menu">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="./index.html">
+                SE BUSCA
+              </a>
+              <div class="navbar-dropdown">
+                <a href="./index.html#pasos" class="navbar-item">
+                  SE BUSCAN VOLUNTARIOS/AS
+                </a>
+                <a href="./index.html#pasos" class="navbar-item">
+                  PASOS PARA SER VOLUNTARIO/A
+                </a>
+              </div>
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="./hazte_voluntario.html">
+                HAZTE VOLUNTARIO/A
+              </a>
+
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="./hazte_voluntario.html#quienes-somos">
+                  ¿QUIÉNES SOMOS?
+                </a>
+                <a class="navbar-item" href="./hazte_voluntario.html#que-hacemos">
+                  ¿QUÉ HACEMOS?
+                </a>
+                <a class="navbar-item" href="./hazte_voluntario.html#preguntas-frecuentes">
+                  PREGUNTAS FRECUENTES (FAQ)
+                </a>
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="./noticias.html">
+                NOTICIAS
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="#actualidad">
+                  ACTUALIDAD EN EL VOLUNTARIADO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <main>
+    <div id="actualidad" class="section">
+      <div class="container">
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p class="title has-text-black-bis">Actualidad en el voluntariado</p>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="buttons">
+                <a href="./mas_noticias.html" class="button is-dark">Ver más noticias</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <div class="card has-background-white-ter">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="./images/unzutxiki2.png" alt="Voluntarios enseñando a abuelos como usar la tecnología">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-4 navy">Unzutxiki</p>
+                  <input type="checkbox" id="toggle1">
+                  <div class="content-noticias">
+                    <p class="subtitle is-6">
+                      La Asociación Unzutxiki Berri se creó para el reparto de alimentos a familias que viven en
+                      Buztintxuri. Cuando en 2017 dejaron de repartir alimentos en la parroquia de El Salvador, se
+                      incorporaron las familias de esa zona de la Rotxapea a nuestra área de influencia.
+                    </p>
+                    <a href="https://unzutxikiberri.org/" target="_blank">Ir a la página de la noticia</a>
+                  </div>
+                  <label for="toggle1" class="toggle-label"></label>
+                </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card has-background-white-ter">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="./images/AMAVIR2.jpg" alt="Chico explicando el uso del teléfono móvil a abuelos">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-4 navy">AMAVIR</p>
+                  <input type="checkbox" id="toggle2">
+                  <div class="content-noticias">
+                    <p class="subtitle is-6">
+                      Amavir es una de las compañías líderes en España en la atención a personas mayores y dependientes.
+                      Nace en 2017 como fruto de la unión entre Amma y Adavir, dos empresas con más de 25 años de
+                      experiencia en el sector.
+                    </p>
+                    <a href="https://www.amavir.es/" target="_blank">Ir a la página de la noticia</a>
+                  </div>
+                  <label for="toggle2" class="toggle-label"></label>
+                </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card has-background-white-ter">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="./images/JornadaVoluntarios.jpg"
+                      alt="Dos mujeres al lado de un cartel de voluntariado de Navarra">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title is-4 navy">Jornada Voluntariado 360</p>
+                  <input type="checkbox" id="toggle3">
+                  <div class="content-noticias">
+                    <p class="subtitle is-6">
+                      El Gobierno de Navarra organiza la jornada Voluntariado 360º en la que se rendirán cuentas del II
+                      Plan de Voluntariado 2022-2023 y se presentará el III Plan de Voluntariado 2024-2027.
+                    </p>
+                    <a href="https://participa.navarra.es/processes/plan-voluntariado-navarra/f/288/meetings/102?component_id=288&locale=es&participatory_process_slug=plan-voluntariado-navarra"
+                target="_blank">Ir a la página de la noticia</a>
+                  </div>
+                  <label for="toggle3" class="toggle-label"></label>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <table class="table is-striped is-fullwidth">
+          <thead>
+            <tr>
+              <th>Noticias</th>
+              <th colspan="2">Fecha de publicación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Semana de la salud</td>
+              <td>29 de Enero de 2025</td>
+              <td><a
+                  href="https://www.cuatrovientos.org/la-semana-de-la-salud-llega-a-su-ecuador-cargada-de-charlas-talleres-y-actividades/">Leer
+                  la noticia</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Proyecto I3 "Empatizando creamos soluciones únicas"</td>
+              <td>15 de diciembre de 2024</td>
+              <td><a
+                  href="https://www.cuatrovientos.org/el-proyecto-i3-empatizando-creamos-soluciones-unicas-finalista-de-los-premios-aprendizaje-servicio-2024/">Leer
+                  la noticia</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Inicio programa voluntariado</td>
+              <td>29 de octubre de 2024</td>
+              <td><a
+                  href="https://www.cuatrovientos.org/el-programa-de-voluntariado-ha-comenzado-este-curso-su-actividad-con-diversas-iniciativas/">Leer
+                  la noticia</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Cuatrovientos Decálogo de Buenas Práticas Medioambientales</td>
+              <td>24 de octubre de 2024</td>
+              <td><a
+                  href="https://www.cuatrovientos.org/cuatrovientos-presenta-su-decalogo-de-buenas-practicas-medioambientales-en-el-dia-internacional-contra-el-cambio-climatico/">Leer
+                  la noticia</a>
+              </td>
+            </tr>
+            <tr>
+              <td> Cuatrovientos acoge una jornada de trabajo del proyecto JEUNESS para el Fomento de la Cooperación
+                Transfronteriza</td>
+              <td>12 de abril de 2024</td>
+              <td><a
+                  href="https://www.cuatrovientos.org/cuatrovientos-acoge-una-jornada-de-trabajo-del-proyecto-jeuness-para-el-fomento-de-la-cooperacion-transfronteriza/">Leer
+                  la noticia</a>
+              </td>
+            </tr>
+            <tr>
+              <td> El Instituto Cuatrovientos realiza una donación a Bomberos Unidos Sin Fronteras para la entrega de
+                material escolar en Perú</td>
+              <td>25 de marzo de 2024</td>
+              <td><a
+                  href="https://www.cuatrovientos.org/el-instituto-cuatrovientos-realiza-una-donacion-a-bomberos-unidos-sin-fronteras-para-la-entrega-de-material-escolar-en-peru/">Leer
+                  la noticia</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div>
+    <a href="#top" id="backToTop" class="back-to-top">↑</a>
+  </div>
+
+  <footer class="footer">
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-left">
+          <p class="has-text-weight-bold">CENTRO INTEGRADO CUATROVIENTOS</p>
+          <p><a href="mailto:secretaria@cuatrovientos.org">secretaria@cuatrovientos.org</a><br>
+            Tel.: 948 12 41 29</p>
+          <p>Horario Curso Escolar:<br>
+            Lunes a viernes: 9:00 – 14:00 h<br>
+            Martes: 15:30 – 18:00 h</p>
+          <p>Verano (de 15 junio a 15 septiembre): <br>
+            Lunes a viernes: 9:00 – 13:30</p>
+        </div>
+      </div>
+      <div class="column is-three-fifths is-flex is-align-items-center is-justify-content-center">
+        <div class="content has-text-centered">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cipcuatrovientos/?hl=es" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/cipcuatrovientos/" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/_cuatrovientos" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/4994017/admin/feed/posts/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/user/alviento" target="_blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <p id="footer-text">
+            Cuatrovientos Centro Integrado &copy; 2025. Todos los derechos reservados.
+          </p>
+          <p>
+            <a href="https://www.cuatrovientos.org/aviso-legal">Aviso legal</a> |
+            <a href="https://www.cuatrovientos.org/politica-de-cookies">Política de cookies</a> |
+            <a href="https://www.cuatrovientos.org/politica-de-privacidad">Política de privacidad</a>
+          </p>
+          <p>
+            <a href="https://www.cuatrovientos.org/administrar-consentimiento">Consentimiento</a> |
+            <a href="mailto:info@cuatrovientos.org">info@cuatrovientos.org</a>
+          </p>
+          <a href="./index.html">
+            <img src="./images/LOGO4V.png" alt="Logo cuatrovientos" class="footer-logo">
+          </a>
+        </div>
+      </div>
+      <div class="column">
+        <iframe id="google-maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.299505832556!2d-1.6624343878483154!3d42.82428680552595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCuatrovientos%20Centro%20Integrado!5e0!3m2!1ses!2ses!4v1738586548208!5m2!1ses!2ses"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
