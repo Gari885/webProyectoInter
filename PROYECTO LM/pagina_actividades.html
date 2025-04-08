@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./bulma.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://kit.fontawesome.com/75419c7891.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
@@ -320,8 +321,318 @@
   </div>
 
   <main>
+    <div id="actualidad" class="section">
+      <div class="container">
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p class="title has-text-black-bis">Actividades</p>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="buttons">
+                <a href="./gestion_proyectos.html" class="button">Apuntarse</a>
+                <a href="#" class="button button is-dark">Apuntadas</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
     
+    <div class="section">
+      <div class="container">
+        <p class="title has-text-centered navy">APUNTARSE A ACTIVIDAD</p>
+
+        <div class="container barraFiltros">
+          <div class="field">
+            <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Buscar actividades..." id="searchInput">
+              <span class="icon is-left has-text-primary">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
+          </div>
+          
+          <div class="level">
+            <div class="level-left">
+              <div class="dropdown" id="dropdownFilter">
+                <div class="dropdown-trigger">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-menu" id="filterBtn">
+                    <span>Filtrar por</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item">
+                      <label class="label">Tipo:</label>
+                      <div class="select">
+                        <select>
+                          <option value="Todos">Todos</option>
+                          <option value="Social">Social</option>
+                          <option value="Educativo">Educativo</option>
+                          <option value="Cultural">Cultural</option>
+                          <option value="Ambiental">Ambiental</option>
+                          <option value="Salud">Salud</option>
+                          <option value="Internacional">Internacional</option>
+                          <option value="Deportivo">Deportivo</option>
+                          <option value="Digital">Digital</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">Organizacion:</label>
+                      <div class="select">
+                        <select>
+                          <option value="Ninguno">Ninguno</option>
+                          <option value="Amavir">Amavir</option>
+                          <option value="Unzutxiki">Unzutxiki</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">ODS</label>
+                      <div class="columns is-multiline">
+                        <div class="column is-half">
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="1">
+                            ODS 1 
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="2">
+                            ODS 2 
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="3">
+                            ODS 3 
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="5">
+                            ODS 5
+                          </label><br>
+                        </div>
+                        <div class="column is-half">
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="9">
+                            ODS 9
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="14">
+                            ODS 14
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="17">
+                            ODS 17
+                          </label><br>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <button id="toggle-calendar" class="button is-link is-small">
+                        📅 Calendario
+                      </button>
+                      <div id="calendar-container" class="mt-2" style="display: none;">
+                        <label class="label">Selecciona una fecha</label>
+                        <div class="control">
+                          <input id="datepicker" class="input" type="text" placeholder="Selecciona una fecha">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">Estado:</label>
+                      <label class="radio">
+                        <input type="radio" name="estado" value="pendiente">
+                        Pendiente
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="estado" value="en-curso">
+                        En Curso
+                      </label>
+                    </div>
+                    <div class="dropdown-item">
+                      <a class="button is-link is-fullwidth" href="#">Aplicar Filtros</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="level-right">
+              <div class="dropdown is-right" id="Ordenar">
+                <div class="dropdown-trigger">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu">
+                    <span>Orden</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
+                  <div>
+                    <a href="#" class="dropdown-item">Ascendente</a>
+                    <a href="#" class="dropdown-item">Descendente</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="columns is-multiline mt-3">
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-5">
+                  <i class="fa-solid fa-sun has-text-warning"></i> Voluntariado en Hospital
+
+                </p>
+
+
+                <p class="subtitle is-6">
+                  <i class="fa-solid fa-user has-text-info"></i> Responsable: María López
+                </p>
+
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 15 de Abril
+                </p>
+                <p>
+                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 25 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
+                    class="tag is-warning">Pendiente</span>
+                  <label for="modalCheckboxProyecto1"
+                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                    <span class="icon">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Ver Información</span>
+                  </label>
+                </p>
+
+              </div>
+              <footer class="card-footer">
+                <button class="card-footer-item button is-success is-light">
+                  <i class="fa-solid fa-check mr-2"></i> Apuntar
+                </button>
+
+              </footer>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-5">
+                  <i class="fa-solid fa-book-open has-text-primary"></i> Reforestación Urbana
+
+                </p>
+
+
+                <p class="subtitle is-6">
+                  <i class="fa-solid fa-user has-text-info"></i> Responsable: Alberto Rojas
+                </p>
+
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 10 de Abril
+                </p>
+                <p>
+                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 14 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
+                    class="tag is-warning">Pendiente</span>
+                  <label for="modalCheckboxProyecto1"
+                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                    <span class="icon">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Ver Información</span>
+                  </label>
+                </p>
+
+              </div>
+              <footer class="card-footer">
+                <button class="card-footer-item button is-success is-light">
+                  <i class="fa-solid fa-check mr-2"></i> Apuntar
+                </button>
+
+              </footer>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-5">
+                  <i class="fa-solid fa-utensils has-text-warning"></i> Voluntariado Comedor Social
+
+                </p>
+
+
+                <p class="subtitle is-6">
+                  <i class="fa-solid fa-user has-text-info"></i> Responsable: Juan Martínez
+                </p>
+
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 5 de Abril
+                </p>
+                <p>
+                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 12 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
+                    class="tag is-warning">En Curso</span>
+                  <label for="modalCheckboxProyecto1"
+                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                    <span class="icon">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Ver Información</span>
+                  </label>
+                </p>
+
+              </div>
+              <footer class="card-footer">
+                <button class="card-footer-item button is-success is-light">
+                  <i class="fa-solid fa-check mr-2"></i> Apuntar
+                </button>
+
+              </footer>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="section">
+        <div class="pagination" role="navigation" aria-label="pagination">
+          <a class="pagination-previous is-disabled" title="This is the first page">Previous</a>
+          <a href="#" class="pagination-next">Next page</a>
+          <ul class="pagination-list">
+            <li>
+              <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+            </li>
+            <li>
+              <a href="#" class="pagination-link" aria-label="Goto page 2">2</a>
+            </li>
+            <li>
+              <a href="#" class="pagination-link" aria-label="Goto page 3">3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
   </main>
+
 
   <div>
     <a href="#top" id="backToTop" class="back-to-top">↑</a>
@@ -384,6 +695,8 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script type="text/javascript" src=actividades.js></script>
 
 </body>
 
