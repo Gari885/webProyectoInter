@@ -356,6 +356,10 @@ html {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
     transition: all 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -368,6 +372,9 @@ html {
     background-color: #f9f9f9;
     padding: 1.5rem;
 }
+.card .card-content {
+    flex-grow: 1;
+  }
 
 .card .title {
     color: #000080;
@@ -622,4 +629,14 @@ input[type="checkbox"]:checked~label.toggle-label::after {
 .barraFiltros #Ordenar .dropdown-item:hover {
     color: whitesmoke !important;
     background-color: #000080 !important;
+}
+
+
+#btn-crear-actividad{
+    border-style: dashed;
+}
+.fa-file-circle-plus{
+    font-size: 5rem;
+    padding: 2rem;
+    color:#000080
 }
