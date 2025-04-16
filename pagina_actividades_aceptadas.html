@@ -8,13 +8,10 @@
   <link rel="stylesheet" href="./bulma.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://kit.fontawesome.com/75419c7891.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
-
-  <input type="checkbox" id="modalCheckboxInicio" class="is-hidden">
-  <input type="checkbox" id="modalCheckboxRegistro" class="is-hidden">
-
 
   <div class="modal inicioSesion">
     <div class="modal-card inicioSesion">
@@ -69,9 +66,9 @@
           </div>
 
           <div class="field">
-            <label class="label">Edad*</label>
+            <label class="label">Fecha de nacimiento*</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Introduce tu edad" required>
+              <input class="input" type="date" placeholder="Introduce tu edad" required>
             </div>
           </div>
 
@@ -96,21 +93,32 @@
           </div>
 
           <div class="field">
-            <label class="label">Curso*</label>
+            <label class="label">Ciclo*</label>
             <div class="control">
               <div class="select">
                 <select required>
-                  <option value="">Selecciona tu Curso</option>
-                  <option value="CFS Administración y Finanzas DUAL">CFS Administración y Finanzas DUAL</option>
-                  <option value="CFS Comercio Internacional DUAL BILINGÜE">CFS Comercio Internacional DUAL BILINGÜE
+                  <option value="">Selecciona tu Cirso</option>
+                  <option value="1º CFS Administración y Finanzas DUAL">1º CFS Administración y Finanzas DUAL</option>
+                  <option value="2º CFS Administración y Finanzas DUAL">2º CFS Administración y Finanzas DUAL</option>
+                  <option value="1º CFS Comercio Internacional DUAL BILINGÜE">1º CFS Comercio Internacional DUAL BILINGÜE
                   </option>
-                  <option value="CFS Gestión de Ventas y Espacios Comerciales DUAL">CFS Gestión de Ventas y Espacios
+                  <option value="2º CFS Comercio Internacional DUAL BILINGÜE">2º CFS Comercio Internacional DUAL BILINGÜE
+                  </option>
+                  <option value="1º CFS Gestión de Ventas y Espacios Comerciales DUAL">1º CFS Gestión de Ventas y Espacios
                     Comerciales DUAL</option>
-                  <option value="CFS Transporte y Logística DUAL">CFS Transporte y Logística DUAL</option>
-                  <option value="CFS Transporte y Logística Virtual">CFS Transporte y Logística Virtual</option>
-                  <option value="CFS Administración de Sistemas Informáticos en Red DUAL">CFS Administración de Sistemas
+                  <option value="2º CFS Gestión de Ventas y Espacios Comerciales DUAL">2º CFS Gestión de Ventas y Espacios
+                    Comerciales DUAL</option>
+                  <option value="1º CFS Transporte y Logística DUAL">1º CFS Transporte y Logística DUAL</option>
+                  <option value="2º CFS Transporte y Logística DUAL">2º CFS Transporte y Logística DUAL</option>
+                  <option value="1º CFS Transporte y Logística Virtual">1º CFS Transporte y Logística Virtual</option>
+                  <option value="2º CFS Transporte y Logística Virtual">2º CFS Transporte y Logística Virtual</option>
+                  <option value="1º CFS Administración de Sistemas Informáticos en Red DUAL">1º CFS Administración de Sistemas
                     Informáticos en Red DUAL</option>
-                  <option value="CFS Desarrollo de Aplicaciones Multiplataforma DUAL">CFS Desarrollo de Aplicaciones
+                  <option value="2º CFS Administración de Sistemas Informáticos en Red DUAL">2º CFS Administración de Sistemas
+                    Informáticos en Red DUAL</option>
+                  <option value="1º CFS Desarrollo de Aplicaciones Multiplataforma DUAL">1º CFS Desarrollo de Aplicaciones
+                    Multiplataforma DUAL</option>
+                  <option value="2º CFS Desarrollo de Aplicaciones Multiplataforma DUAL">2º CFS Desarrollo de Aplicaciones
                     Multiplataforma DUAL</option>
                 </select>
               </div>
@@ -118,38 +126,41 @@
           </div>
 
           <div class="field">
-            <label class="label">¿En qué año estas?*</label>
+            <label class="label">Selecciona tus intereses</label>
+          
             <div class="control">
-              <label class="radio">
-                <input type="radio" name="curso" value="si" required>
-                Primero
-              </label>
-              <label class="radio">
-                <input type="radio" name="curso" value="no" required>
-                Segundo
+              <label class="checkbox">
+                <input type="checkbox" name="intereses[]" value="tecnologia">
+                Tecnología
               </label>
             </div>
-          </div>
-
-          <div class="field">
-            <label class="label">¿Tienes experiencia previa?</label>
+          
             <div class="control">
-              <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
+              <label class="checkbox">
+                <input type="checkbox" name="intereses[]" value="deportes">
+                Deportes
+              </label>
             </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Disponibilidad semanal*</label>
+          
             <div class="control">
-              <div class="select">
-                <select required>
-                  <option value="">Selecciona</option>
-                  <option value="1-2 horas">1-2 horas</option>
-                  <option value="3-4 horas">3-4 horas</option>
-                  <option value="+5 horas">+5 horas</option>
-                  <option value="1-2 horas">Talleres puntuales</option>
-                </select>
-              </div>
+              <label class="checkbox">
+                <input type="checkbox" name="intereses[]" value="arte">
+                Arte
+              </label>
+            </div>
+          
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="intereses[]" value="musica">
+                Música
+              </label>
+            </div>
+          
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" name="intereses[]" value="viajes">
+                Viajes
+              </label>
             </div>
           </div>
 
@@ -178,33 +189,26 @@
                   <option value="Cultural">Cultural</option>
                   <option value="Ambiental">Ambiental</option>
                   <option value="Salud">Salud</option>
-                  <option value="Internacional">Internacional</option>
                   <option value="Deportivo">Deportivo</option>
                   <option value="Digital">Digital</option>
+                  <option value="Digital">Técnico</option>
                 </select>
               </div>
             </div>
           </div>
 
           <div class="field">
-            <label class="label">¿Estarías interesado/a en hacer voluntariado técnico?*</label>
+            <label class="label">Cuentanos más sobre ti o tu experiencia previa</label>
             <div class="control">
-              <label class="radio">
-                <input type="radio" name="voluntariado técnico" value="si" required>
-                Sí
-              </label>
-              <label class="radio">
-                <input type="radio" name="voluntariado técnico" value="no" required>
-                No
-              </label>
+              <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
             </div>
           </div>
 
           <div class="field">
-            <label class="label">¿Cuales son los conocimientos técnicos que podrías aportar?</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
-            </div>
+            <label class="checkbox">
+              <input type="checkbox" required>
+              Acepto los <a href="https://www.cuatrovientos.org/administrar-consentimiento" target="_blank">términos y condiciones</a>.
+            </label>
           </div>
 
           <footer class="modal-card-foot">
@@ -252,14 +256,14 @@
         <div class="container is-max-desktop">
           <div class="navbar-menu">
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="./index.html">
+              <a class="navbar-link" href="#">
                 SE BUSCA
               </a>
               <div class="navbar-dropdown">
-                <a href="./index.html#pasos" class="navbar-item">
+                <a href="#se-buscan" class="navbar-item">
                   SE BUSCAN VOLUNTARIOS/AS
                 </a>
-                <a href="./index.html#pasos" class="navbar-item">
+                <a href="#pasos" class="navbar-item">
                   PASOS PARA SER VOLUNTARIO/A
                 </a>
               </div>
@@ -287,17 +291,30 @@
                 NOTICIAS
               </a>
               <div class="navbar-dropdown">
-                <a class="navbar-item" href="#actualidad">
+                <a class="navbar-item" href="./noticias.html#actualidad">
                   ACTUALIDAD EN EL VOLUNTARIADO
                 </a>
               </div>
             </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="./hazte_voluntario.html">
+                  ACTIVIDADES
+                </a>
+  
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="./hazte_voluntario.html#quienes-somos">
+                    APUNTARSE A ACTIVIDAD
+                  </a>
+                  <a class="navbar-item" href="./hazte_voluntario.html#que-hacemos">
+                    HISTORIAL
+                  </a>
+                </div>
+              </div>
           </div>
         </div>
       </nav>
     </div>
   </div>
-
 
   <main>
     <div id="actualidad" class="section">
@@ -305,158 +322,186 @@
         <nav class="level">
           <div class="level-left">
             <div class="level-item">
-              <p class="title has-text-black-bis">Actualidad en el voluntariado</p>
+              <p class="title has-text-black-bis">Actividades</p>
             </div>
           </div>
           <div class="level-right">
             <div class="level-item">
               <div class="buttons">
-                <a href="./mas_noticias.html" class="button is-dark">Ver más noticias</a>
+                <a href="./gestion_proyectos.html" class="button">Apuntarse</a>
+                <a href="#" class="button button is-dark">Apuntadas</a>
               </div>
             </div>
           </div>
         </nav>
       </div>
     </div>
-
+    
     <div class="section">
       <div class="container">
-        <div class="columns is-multiline">
-          <div class="column is-one-third">
-            <div class="card has-background-white-ter">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./images/unzutxiki2.png" alt="Voluntarios enseñando a abuelos como usar la tecnología">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title is-4 navy">Unzutxiki</p>
-                  <input type="checkbox" id="toggle1">
-                  <div class="content-noticias">
-                    <p class="subtitle is-6">
-                      La Asociación Unzutxiki Berri se creó para el reparto de alimentos a familias que viven en
-                      Buztintxuri. Cuando en 2017 dejaron de repartir alimentos en la parroquia de El Salvador, se
-                      incorporaron las familias de esa zona de la Rotxapea a nuestra área de influencia.
-                    </p>
-                    <a href="https://unzutxikiberri.org/" target="_blank">Ir a la página de la noticia</a>
-                  </div>
-                  <label for="toggle1" class="toggle-label"></label>
-                </div>
+        <p class="title has-text-centered navy">APUNTARSE A ACTIVIDAD</p>
+
+        <div class="container barraFiltros">
+          <div class="field">
+            <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Buscar actividades..." id="searchInput">
+              <span class="icon is-left has-text-primary">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
             </div>
           </div>
-          <div class="column is-one-third">
-            <div class="card has-background-white-ter">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./images/AMAVIR2.jpg" alt="Chico explicando el uso del teléfono móvil a abuelos">
-                  </figure>
+          
+          <div class="level">
+            <div class="level-left">
+              <div class="dropdown" id="dropdownFilter">
+                <div class="dropdown-trigger">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-menu" id="filterBtn">
+                    <span>Filtrar por</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
                 </div>
-                <div class="card-content">
-                  <p class="title is-4 navy">AMAVIR</p>
-                  <input type="checkbox" id="toggle2">
-                  <div class="content-noticias">
-                    <p class="subtitle is-6">
-                      Amavir es una de las compañías líderes en España en la atención a personas mayores y dependientes.
-                      Nace en 2017 como fruto de la unión entre Amma y Adavir, dos empresas con más de 25 años de
-                      experiencia en el sector.
-                    </p>
-                    <a href="https://www.amavir.es/" target="_blank">Ir a la página de la noticia</a>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item">
+                      <label class="label">Tipo:</label>
+                      <div class="select">
+                        <select>
+                          <option value="Todos">Todos</option>
+                          <option value="Social">Social</option>
+                          <option value="Educativo">Educativo</option>
+                          <option value="Cultural">Cultural</option>
+                          <option value="Ambiental">Ambiental</option>
+                          <option value="Salud">Salud</option>
+                          <option value="Internacional">Internacional</option>
+                          <option value="Deportivo">Deportivo</option>
+                          <option value="Digital">Digital</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">Organizacion:</label>
+                      <div class="select">
+                        <select>
+                          <option value="Ninguno">Ninguno</option>
+                          <option value="Amavir">Amavir</option>
+                          <option value="Unzutxiki">Unzutxiki</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">ODS</label>
+                      <div class="columns is-multiline">
+                        <div class="column is-half">
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="1">
+                            ODS 1 
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="2">
+                            ODS 2 
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="3">
+                            ODS 3 
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="5">
+                            ODS 5
+                          </label><br>
+                        </div>
+                        <div class="column is-half">
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="9">
+                            ODS 9
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="14">
+                            ODS 14
+                          </label><br>
+                          <label class="checkbox">
+                            <input type="checkbox" name="ods" value="17">
+                            ODS 17
+                          </label><br>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <button id="toggle-calendar" class="button is-link is-small">
+                        📅 Calendario
+                      </button>
+                      <div id="calendar-container" class="mt-2" style="display: none;">
+                        <label class="label">Selecciona una fecha</label>
+                        <div class="control">
+                          <input id="datepicker" class="input" type="text" placeholder="Selecciona una fecha">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">Estado:</label>
+                      <label class="radio">
+                        <input type="radio" name="estado" value="pendiente">
+                        Pendiente
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="estado" value="en-curso">
+                        En Curso
+                      </label>
+                    </div>
+                    <div class="dropdown-item">
+                      <a class="button is-link is-fullwidth" href="#">Aplicar Filtros</a>
+                    </div>
                   </div>
-                  <label for="toggle2" class="toggle-label"></label>
                 </div>
+              </div>
             </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card has-background-white-ter">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./images/JornadaVoluntarios.jpg"
-                      alt="Dos mujeres al lado de un cartel de voluntariado de Navarra">
-                  </figure>
+        
+            <div class="level-right">
+              <div class="dropdown is-right" id="ordenDropdown">
+                <div class="dropdown-trigger">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu" id="ordenTrigger">
+                    <span>Orden</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
                 </div>
-                <div class="card-content">
-                  <p class="title is-4 navy">Jornada Voluntariado 360</p>
-                  <input type="checkbox" id="toggle3">
-                  <div class="content-noticias">
-                    <p class="subtitle is-6">
-                      El Gobierno de Navarra organiza la jornada Voluntariado 360º en la que se rendirán cuentas del II
-                      Plan de Voluntariado 2022-2023 y se presentará el III Plan de Voluntariado 2024-2027.
-                    </p>
-                    <a href="https://participa.navarra.es/processes/plan-voluntariado-navarra/f/288/meetings/102?component_id=288&locale=es&participatory_process_slug=plan-voluntariado-navarra"
-                target="_blank">Ir a la página de la noticia</a>
+                <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
+                  <div>
+                    <a href="#" class="dropdown-item" id="ordenAsc">Ascendente</a>
+                    <a href="#" class="dropdown-item" id="ordenDesc">Descendente</a>
                   </div>
-                  <label for="toggle3" class="toggle-label"></label>
                 </div>
+              </div>
             </div>
+            
           </div>
         </div>
-      </div>
 
-      <div class="container">
+        <div id="actividades-aceptadas" class="mt-4"></div>
 
-        <table class="table is-striped is-fullwidth">
-          <thead>
-            <tr>
-              <th>Noticias</th>
-              <th colspan="2">Fecha de publicación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Semana de la salud</td>
-              <td>29 de Enero de 2025</td>
-              <td><a
-                  href="https://www.cuatrovientos.org/la-semana-de-la-salud-llega-a-su-ecuador-cargada-de-charlas-talleres-y-actividades/">Leer
-                  la noticia</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Proyecto I3 "Empatizando creamos soluciones únicas"</td>
-              <td>15 de diciembre de 2024</td>
-              <td><a
-                  href="https://www.cuatrovientos.org/el-proyecto-i3-empatizando-creamos-soluciones-unicas-finalista-de-los-premios-aprendizaje-servicio-2024/">Leer
-                  la noticia</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Inicio programa voluntariado</td>
-              <td>29 de octubre de 2024</td>
-              <td><a
-                  href="https://www.cuatrovientos.org/el-programa-de-voluntariado-ha-comenzado-este-curso-su-actividad-con-diversas-iniciativas/">Leer
-                  la noticia</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Cuatrovientos Decálogo de Buenas Práticas Medioambientales</td>
-              <td>24 de octubre de 2024</td>
-              <td><a
-                  href="https://www.cuatrovientos.org/cuatrovientos-presenta-su-decalogo-de-buenas-practicas-medioambientales-en-el-dia-internacional-contra-el-cambio-climatico/">Leer
-                  la noticia</a>
-              </td>
-            </tr>
-            <tr>
-              <td> Cuatrovientos acoge una jornada de trabajo del proyecto JEUNESS para el Fomento de la Cooperación
-                Transfronteriza</td>
-              <td>12 de abril de 2024</td>
-              <td><a
-                  href="https://www.cuatrovientos.org/cuatrovientos-acoge-una-jornada-de-trabajo-del-proyecto-jeuness-para-el-fomento-de-la-cooperacion-transfronteriza/">Leer
-                  la noticia</a>
-              </td>
-            </tr>
-            <tr>
-              <td> El Instituto Cuatrovientos realiza una donación a Bomberos Unidos Sin Fronteras para la entrega de
-                material escolar en Perú</td>
-              <td>25 de marzo de 2024</td>
-              <td><a
-                  href="https://www.cuatrovientos.org/el-instituto-cuatrovientos-realiza-una-donacion-a-bomberos-unidos-sin-fronteras-para-la-entrega-de-material-escolar-en-peru/">Leer
-                  la noticia</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+       
+        
+      
       </div>
-    </div>
+        <div class="pagination m-4" role="navigation" aria-label="pagination">
+          <a class="pagination-previous is-disabled" title="This is the first page">Previous</a>
+          <a href="#" class="pagination-next">Next page</a>
+          <ul class="pagination-list">
+            <li>
+              <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+            </li>
+            <li>
+              <a href="#" class="pagination-link" aria-label="Goto page 2">2</a>
+            </li>
+            <li>
+              <a href="#" class="pagination-link" aria-label="Goto page 3">3</a>
+            </li>
+          </ul>
+        </div>
   </main>
+
 
   <div>
     <a href="#top" id="backToTop" class="back-to-top">↑</a>
@@ -519,7 +564,8 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script type="text/javascript" src="actividadesAceptadas.js" defer></script>
 
 </body>
 

@@ -14,6 +14,7 @@
 
   <input type="checkbox" id="modalCheckboxInicio" class="is-hidden">
   <input type="checkbox" id="modalCheckboxRegistro" class="is-hidden">
+  <input type="checkbox" id="modalCheckboxOrganizacion" class="is-hidden">
 
 
   <div class="modal inicioSesion">
@@ -33,12 +34,100 @@
           <div class="field">
             <label class="label">Contraseña:</label>
             <div class="control">
-              <input class="input" type="password" name="password" placeholder="Tu contraseña" required>
+              <input class="input" type="password" name="password" placeholder="tu contraseña" required>
             </div>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input id="recordarCredenciales" type="checkbox">
+              Recordar mis credenciales
+            </label>
           </div>
           <div class="field">
             <button type="submit" class="button is-link is-fullwidth">Acceder</button>
           </div>
+          <div class="has-text-centered">
+            <p>
+              <label for="modalCheckboxRegistro" class="has-text-link is-clickable is-size-6 quieroRegistrar">
+                <span>Registrarme como Voluntario</span>
+              </label>
+            </p>
+            <p>
+              <label for="modalCheckboxOrganizacion" class="has-text-link is-clickable is-size-6 quieroRegistrar">
+                <span>Quiero registrar una nueva Organización</span>
+              </label>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal registroOrganizacion">
+    <div class="modal-card registroOrganizacion">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Registro de Organización</p>
+        <label for="modalCheckboxOrganizacion" class="delete" aria-label="close"></label>
+      </header>
+      <div class="modal-card-body">
+        <p class="intro-text">Una vez enviado, el formulario será revisado. Te enviaremos un correo electrónico con la confirmación y los pasos a seguir.</p>
+        <form action="./registro_organizacion.html" method="POST">
+          <div class="field">
+            <label class="label">CIF*</label>
+            <div class="control">
+              <input class="input" type="text" name="cif" placeholder="Ej: A12345678" pattern="[A-Za-z0-9]{9}" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Nombre de la Organización*</label>
+            <div class="control">
+              <input class="input" type="text" name="nombre_organizacion" placeholder="Ej: Fundación Ejemplo" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Dirección*</label>
+            <div class="control">
+              <input class="input" type="text" name="direccion" placeholder="Ej: Calle Ejemplo, 123" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Código Postal*</label>
+            <div class="control">
+              <input class="input" type="text" name="codigo_postal" placeholder="Ej: 31001" pattern="[0-9]{5}" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Localidad*</label>
+            <div class="control">
+              <input class="input" type="text" name="localidad" placeholder="Ej: Pamplona" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Teléfono de Contacto*</label>
+            <div class="control">
+              <input class="input" type="tel" name="telefono_organizacion" placeholder="Ej: 612345678" pattern="[0-9]{9}" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Descripción de la Organización</label>
+            <div class="control">
+              <textarea class="textarea" name="descripcion_organizacion" placeholder="Escribe una breve descripción..."></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" required>
+              Acepto los <a href="https://www.cuatrovientos.org/administrar-consentimiento" target="_blank">términos y condiciones*</a>.
+            </label>
+          </div>
+          <footer class="modal-card-foot">
+            <div class="field">
+              <button type="submit" class="button is-link is-fullwidth">Registrar Organización</button>
+            </div>
+            <div class="footer-logo-container">
+              <img src="./images/LOGO4V.png" alt="Voluntariado Cuatrovientos" class="footer-logo">
+            </div>
+          </footer>
         </form>
       </div>
     </div>
@@ -57,28 +146,28 @@
           <div class="field">
             <label class="label">Nombre*</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Introduce tu nombre" required>
+              <input class="input" type="text" placeholder="Ej: Ana" required>
             </div>
           </div>
 
           <div class="field">
             <label class="label">Apellidos*</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Introduce tus apellidos" required>
+              <input class="input" type="text" placeholder="Ej: Lopez Perez" required>
             </div>
           </div>
 
           <div class="field">
             <label class="label">Fecha de nacimiento*</label>
             <div class="control">
-              <input class="input" type="date" placeholder="Introduce tu edad" required>
+              <input class="input" type="date" required>
             </div>
           </div>
 
           <div class="field">
             <label class="label">Email*</label>
             <div class="control has-icons-left">
-              <input class="input" type="email" placeholder="Introduce tu correo electrónico" required>
+              <input class="input" type="email" placeholder="correo@ejemplo.com" required>
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
@@ -88,7 +177,7 @@
           <div class="field">
             <label class="label">Teléfono*</label>
             <div class="control has-icons-left">
-              <input class="input" type="tel" placeholder="Número de teléfono" pattern="[0-9]{9}" required>
+              <input class="input" type="tel" placeholder="Ej: 612345678" pattern="[0-9]{9}" required>
               <span class="icon is-small is-left">
                 <i class="fas fa-phone"></i>
               </span>
@@ -100,7 +189,7 @@
             <div class="control">
               <div class="select">
                 <select required>
-                  <option value="">Selecciona tu Cirso</option>
+                  <option value="">Selecciona el ciclo al que perteneces actualmente</option>
                   <option value="1º CFS Administración y Finanzas DUAL">1º CFS Administración y Finanzas DUAL</option>
                   <option value="2º CFS Administración y Finanzas DUAL">2º CFS Administración y Finanzas DUAL</option>
                   <option value="1º CFS Comercio Internacional DUAL BILINGÜE">1º CFS Comercio Internacional DUAL BILINGÜE
@@ -127,49 +216,89 @@
               </div>
             </div>
           </div>
+        
+          <div class="field">
+            <label class="label">¿De qué tiempo dispones?*</label>
+            <div class="control schedule-container">
+              <div class="dia">
+                <label for="lunes"><span class="has-text-weight-bold">Lunes:</span></label>
+                <input type="time" id="lunes_inicio" name="lunes_inicio" class="time-input"> a 
+                <input type="time" id="lunes_fin" name="lunes_fin" class="time-input">
+              </div>
+              <div class="dia">
+                <label for="martes"><span class="has-text-weight-bold">Martes:</span></label>
+                <input type="time" id="martes_inicio" name="martes_inicio" class="time-input"> a 
+                <input type="time" id="martes_fin" name="martes_fin" class="time-input">
+              </div>
+              <div class="dia">
+                <label for="miercoles"><span class="has-text-weight-bold">Miércoles:</span></label>
+                <input type="time" id="miercoles_inicio" name="miercoles_inicio" class="time-input"> a 
+                <input type="time" id="miercoles_fin" name="miercoles_fin" class="time-input">
+              </div>
+              <div class="dia">
+                <label for="jueves"><span class="has-text-weight-bold">Jueves:</span></label>
+                <input type="time" id="jueves_inicio" name="jueves_inicio" class="time-input"> a 
+                <input type="time" id="jueves_fin" name="jueves_fin" class="time-input">
+              </div>
+              <div class="dia">
+                <label for="viernes"><span class="has-text-weight-bold">Viernes:</span></label>
+                <input type="time" id="viernes_inicio" name="viernes_inicio" class="time-input"> a 
+                <input type="time" id="viernes_fin" name="viernes_fin" class="time-input">
+              </div>
+              <div class="dia">
+                <label for="sabado"><span class="has-text-weight-bold">Sábado:</span></label>
+                <input type="time" id="sabado_inicio" name="sabado_inicio" class="time-input"> a 
+                <input type="time" id="sabado_fin" name="sabado_fin" class="time-input">
+              </div>
+              <div class="dia">
+                <label for="domingo"><span class="has-text-weight-bold">Domingo:</span></label>
+                <input type="time" id="domingo_inicio" name="domingo_inicio" class="time-input"> a 
+                <input type="time" id="domingo_fin" name="domingo_fin" class="time-input">
+              </div>
+            </div>
+          </div>
 
           <div class="field">
-            <label class="label">Selecciona tus intereses</label>
-          
-            <div class="control">
+            <label class="label">¿Qué tipos de voluntariado son de tu interés?*</label>
+            <div class="control schedule-container">
               <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="tecnologia">
-                Tecnología
+                <input type="checkbox" name="voluntariado[]" value="Social">
+                Social
               </label>
-            </div>
-          
-            <div class="control">
               <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="deportes">
-                Deportes
+                <input type="checkbox" name="voluntariado[]" value="Educativo">
+                Educativo
               </label>
-            </div>
-          
-            <div class="control">
               <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="arte">
-                Arte
+                <input type="checkbox" name="voluntariado[]" value="Cultural">
+                Cultural
               </label>
-            </div>
-          
-            <div class="control">
               <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="musica">
-                Música
+                <input type="checkbox" name="voluntariado[]" value="Ambiental">
+                Ambiental
               </label>
-            </div>
-          
-            <div class="control">
               <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="viajes">
-                Viajes
+                <input type="checkbox" name="voluntariado[]" value="Salud">
+                Salud
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="voluntariado[]" value="Deportivo">
+                Deportivo
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="voluntariado[]" value="Digital">
+                Digital
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="voluntariado[]" value="Técnico">
+                Técnico
               </label>
             </div>
           </div>
 
           <div class="field">
-            <label class="label">¿Tienes coche propio?*</label>
-            <div class="control">
+            <label class="label">¿Dispones de vehículo propio?*</label>
+            <div class="control schedule-container">
               <label class="radio">
                 <input type="radio" name="coche" value="si" required>
                 Sí
@@ -182,26 +311,7 @@
           </div>
 
           <div class="field">
-            <label class="label">¿Qué tipo de voluntariado te gustaría hacer?*</label>
-            <div class="control">
-              <div class="select">
-                <select required>
-                  <option value="">Tipos</option>
-                  <option value="Social">Social</option>
-                  <option value="Educativo">Educativo</option>
-                  <option value="Cultural">Cultural</option>
-                  <option value="Ambiental">Ambiental</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Deportivo">Deportivo</option>
-                  <option value="Digital">Digital</option>
-                  <option value="Digital">Técnico</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Cuentanos más sobre ti o tu experiencia previa</label>
+            <label class="label">Cuentanos más sobre ti y/o tu experiencia previa</label>
             <div class="control">
               <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
             </div>
@@ -210,7 +320,7 @@
           <div class="field">
             <label class="checkbox">
               <input type="checkbox" required>
-              Acepto los <a href="https://www.cuatrovientos.org/administrar-consentimiento" target="_blank">términos y condiciones</a>.
+              Acepto los <a href="https://www.cuatrovientos.org/administrar-consentimiento" target="_blank">términos y condiciones*</a>.
             </label>
           </div>
 
@@ -306,7 +416,6 @@
   </div>
 
   <main class="section no-padding">
-
     <div class="full-width-image">
       <figure class="image is-fullwidth">
         <img src="./images/BANNER-SEBUSCA.png" alt="Imagen en el que unas personas realizan un voluntariado">
@@ -320,64 +429,57 @@
       </div>
       </figure>
     </div>
-
-    <div id="se-buscan" class="section is-info is-max-desktop">
-      <div class="columns is-mobile">
-        <div class="column columna1">
-          <figure class="image is-fullwidth">
-            <img src="./images/CARTEL-SEBUSCA.png" alt="">
-          </figure>
-        </div>
-        <div class="column is-two-thirds columna2">
-          <div class="columns is-multiline">
-            <p class="title">
-              El programa de voluntariado Cuatrovientos ha iniciado el curso con diversas iniciativas: <br>
-            </p>
-            <ol class="is-size-5">
-              <li>
-                Charlas informativas en el Instituto dirigidas a alumnado interesado en participar en alguna de sus
-                actividades.
-              </li>
-              <li>
-                La celebración del primer taller de digitalización para mayores celebrado en el Centro de Día La
-                Vaguada.
-              </li>
-              <li>
-                La asistencia a la “fiesta del voluntariado” organizada por Gobierno de Navarra.
-              </li>
-            </ol>
-            <p class="has-text-weight-bold is-size-5 ">
-              Si estás interesado en participar escríbenos a voluntariado@cuatrovientos.org <br>
-              #compartetutiempocambiasusvidas
-            </p>
+    <div id="se-buscan" class="section is-info">
+      <div class="container">
+        <div class="columns is-vcentered is-variable is-6">
+          <div class="column is-one-third columna1">
+            <figure class="image is-fullwidth">
+              <img src="./images/CARTEL-SEBUSCA.png" alt="Cartel de se buscan voluntarios">
+            </figure>
           </div>
-          <div class="columns is-multiline2 is-size-5">
-            <div>
-              <p class="title">¿Qué es el voluntariado?</p>
-              <p>El voluntariado es una actividad que se realiza de forma libre, desinteresada y sin
-                ánimo de lucro para
-                ayudar a otras personas o a la sociedad en general. El voluntariado es una forma de participación social
-                que contribuye a la mejora de la calidad de vida de las personas y a la construcción de una sociedad más
-                justa y solidaria.
-              </p>
-              <p>
-                Además, el voluntariado proporciona una oportunidad única para el desarrollo personal. A través de su
-                experiencia,
-                los voluntarios adquieren nuevas habilidades, conocimientos y perspectivas que enriquecen su vida y les
-                permiten crecer como individuos.
-              </p>
-              <p class="has-text-weight-bold">¡El voluntariado es una expresión poderosa de altruismo y compromiso
-                social!
-              </p>
-              <p>
-                <a href="./hazte_voluntario.html" class="button is-info">Más información</a>
-              </p>
+          <div class="column is-two-thirds columna2">
+            <div class="testimonials-container">
+              <div class="testimonial-item">
+                <figure class="image is-96x96">
+                  <img class="is-rounded" src="./images/persona1.jpg" alt="Foto de María, voluntaria">
+                </figure>
+                <div class="testimonial-content">
+                  <p class="has-text-weight-bold is-size-4 navy">María López</p>
+                  <p class="has-text-italic">"Ser voluntaria me ha permitido crecer como persona y ayudar a quienes más lo necesitan. Es una experiencia que recomiendo a todos."</p>
+                </div>
+              </div>
+              <div class="testimonial-item testimonial-item-alt">
+                <div class="testimonial-content">
+                  <p class="has-text-weight-bold is-size-4 navy">Juan Pérez</p>
+                  <p class="quote">"El voluntariado me ha dado la oportunidad de conocer personas increíbles y marcar una diferencia en mi comunidad."</p>
+                </div>
+                <figure class="image is-96x96">
+                  <img class="is-rounded" src="./images/persona2.jpg" alt="Foto de Juan, voluntario">
+                </figure>
+              </div>
+              <div class="testimonial-item">
+                <figure class="image is-96x96">
+                  <img class="is-rounded" src="./images/persona3.jpg" alt="Foto de Ana, voluntaria">
+                </figure>
+                <div class="testimonial-content">
+                  <p class="has-text-weight-bold is-size-4 navy">Carlos Fernández</p>
+                  <p class="quote">"Participar en este programa ha sido una de las mejores decisiones de mi vida. He aprendido mucho y he hecho amigos para toda la vida."</p>
+                </div>
+              </div>
+              <div class="testimonial-item testimonial-item-alt">
+                <div class="testimonial-content">
+                  <p class="has-text-weight-bold is-size-4 navy">Ana García</p>
+                  <p class="quote">"El voluntariado no solo cambia la vida de quienes ayudas, también cambia la tuya. Es una experiencia transformadora."</p>
+                </div>
+                <figure class="image is-96x96">
+                  <img class="is-rounded" src="./images/persona4.jpg" alt="Foto de Carlos, voluntario">
+                </figure>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
 
     <div id="pasos" class="section steps-div">
       <div class="container">
@@ -481,7 +583,7 @@
       </div>
     </div>
   </footer>
-
+  <script src="validacionFormularios.js"></script>
 </body>
 
 </html>

@@ -13,10 +13,6 @@
 
 <body>
 
-  <input type="checkbox" id="modalCheckboxInicio" class="is-hidden">
-  <input type="checkbox" id="modalCheckboxRegistro" class="is-hidden">
-
-
   <div class="modal inicioSesion">
     <div class="modal-card inicioSesion">
       <header class="modal-card-head">
@@ -462,9 +458,9 @@
             </div>
         
             <div class="level-right">
-              <div class="dropdown is-right" id="Ordenar">
+              <div class="dropdown is-right" id="ordenDropdown">
                 <div class="dropdown-trigger">
-                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu" id="ordenTrigger">
                     <span>Orden</span>
                     <span class="icon is-small">
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -473,12 +469,13 @@
                 </div>
                 <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
                   <div>
-                    <a href="#" class="dropdown-item">Ascendente</a>
-                    <a href="#" class="dropdown-item">Descendente</a>
+                    <a href="#" class="dropdown-item" id="ordenAsc">Ascendente</a>
+                    <a href="#" class="dropdown-item" id="ordenDesc">Descendente</a>
                   </div>
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
 
@@ -508,19 +505,19 @@
                 <p>
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                     class="tag is-warning">Pendiente</span>
-                  <label for="modalCheckboxProyecto1"
-                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                  <label
+                    class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal1">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span>Ver Información</span>
+                    <span id="Actividad1" >Ver Información</span>
                   </label>
                 </p>
 
               </div>
               <footer class="card-footer">
                 <button class="card-footer-item button is-success is-light">
-                  <i class="fa-solid fa-check mr-2"></i> Apuntar
+                  <i class="fa-solid fa-check mr-2 button-aceptar"></i> Apuntar
                 </button>
 
               </footer>
@@ -551,19 +548,18 @@
                 <p>
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                     class="tag is-warning">Pendiente</span>
-                  <label for="modalCheckboxProyecto1"
-                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"  data-target="modal2">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span>Ver Información</span>
+                    <span id="Actividad2">Ver Información</span>
                   </label>
                 </p>
 
               </div>
               <footer class="card-footer">
                 <button class="card-footer-item button is-success is-light">
-                  <i class="fa-solid fa-check mr-2"></i> Apuntar
+                  <i class="fa-solid fa-check mr-2 button-acetar"></i> Apuntar
                 </button>
 
               </footer>
@@ -592,20 +588,19 @@
 
                 <p>
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                    class="tag is-warning">En Curso</span>
-                  <label for="modalCheckboxProyecto1"
-                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                    class="tag is-black">En Curso</span>
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal3">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span>Ver Información</span>
+                    <span id="Actividad3">Ver Información</span>
                   </label>
                 </p>
 
               </div>
               <footer class="card-footer">
                 <button class="card-footer-item button is-success is-light">
-                  <i class="fa-solid fa-check mr-2"></i> Apuntar
+                  <i class="fa-solid fa-check mr-2 button-aceptar"></i> Apuntar
                 </button>
 
               </footer>
@@ -613,8 +608,64 @@
           </div>
 
         </div>
+        <div class="modal modal-proyecto" id="modal1">
+          <div class="modal-background" data-close></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Información del Proyecto</p>
+              <label for="modalCheckboxProyecto1" class="delete" aria-label="close"></label>
+            </header>
+            <div class="modal-card-body">
+              <p><span class="has-text-weight-bold">Nombre:</span> Voluntariado en Hospital</p>
+              <p><span class="has-text-weight-bold">Organización:</span> Fundación Nueva Esperanza</p>
+              <p><span class="has-text-weight-bold">Contacto:</span> maria.lopez@fundacionnuevaesperanza.es</p>
+              <p><span class="has-text-weight-bold">Fecha propuesta:</span> 2 de febrero</p>
+              <p><span class="has-text-weight-bold">Nº voluntarios:</span> 8</p>
+              <p><span class="has-text-weight-bold">Descripción:</span> Se busca apoyo para acompañar a pacientes en
+                recuperación.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="modal modal-proyecto" id="modal2">
+          <div class="modal-background" data-close></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Información del Proyecto</p>
+              <label for="modalCheckboxProyecto2" class="delete" aria-label="close"></label>
+            </header>
+            <div class="modal-card-body">
+              <p><span class="has-text-weight-bold">Nombre:</span> Reforestación Urbana</p>
+              <p><span class="has-text-weight-bold">Organización:</span> Greenpeace</p>
+              <p><span class="has-text-weight-bold">Contacto:</span> alberto.rojas@greenpeace.es</p>
+              <p><span class="has-text-weight-bold">Fecha propuesta:</span> 27 de febrero</p>
+              <p><span class="has-text-weight-bold">Nº voluntarios:</span> 3</p>
+              <p><span class="has-text-weight-bold">Descripción:</span> Participaremos en la plantación de árboles y arbustos en zonas urbanas para mejorar el medioambiente y fomentar espacios verdes en la comunidad. Además, sensibilizaremos a los vecinos sobre la importancia de la conservación ambiental.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="modal modal-proyecto" id="modal3">
+          <div class="modal-background" data-close></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Información del Proyecto</p>
+              <label for="modalCheckboxProyecto3" class="delete" aria-label="close"></label>
+            </header>
+            <div class="modal-card-body">
+              <p><span class="has-text-weight-bold">Nombre:</span> Voluntario comedor social</p>
+              <p><span class="has-text-weight-bold">Organización:</span> Paris 365</p>
+              <p><span class="has-text-weight-bold">Contacto:</span> juan.martinez@paris365.es</p>
+              <p><span class="has-text-weight-bold">Fecha propuesta:</span> 18 de febrero</p>
+              <p><span class="has-text-weight-bold">Nº voluntarios:</span> 5</p>
+              <p><span class="has-text-weight-bold">Descripción:</span> Se necesitan voluntarios para ayudar dar comidas en
+                comedor social el viernes a la noche en San Juan</p>
+            </div>
+      
+          </div>
+        </div>
+      
       </div>
-      <div class="section">
         <div class="pagination" role="navigation" aria-label="pagination">
           <a class="pagination-previous is-disabled" title="This is the first page">Previous</a>
           <a href="#" class="pagination-next">Next page</a>
@@ -630,7 +681,6 @@
             </li>
           </ul>
         </div>
-      </div>
   </main>
 
 
@@ -696,7 +746,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script type="text/javascript" src=actividades.js></script>
+  <script type="text/javascript" src="actividades.js" defer></script>
 
 </body>
 
