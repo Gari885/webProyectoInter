@@ -62,7 +62,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal registroOrganizacion">
     <div class="modal-card registroOrganizacion">
       <header class="modal-card-head">
@@ -71,41 +70,41 @@
       </header>
       <div class="modal-card-body">
         <p class="intro-text">Una vez enviado, el formulario será revisado. Te enviaremos un correo electrónico con la confirmación y los pasos a seguir.</p>
-        <form action="./registro_organizacion.html" method="POST">
+        <form id="registroOrganizacionForm" action="./registro_organizacion.html" method="POST">
           <div class="field">
             <label class="label">CIF*</label>
             <div class="control">
-              <input class="input" type="text" name="cif" placeholder="Ej: A12345678" pattern="[A-Za-z0-9]{9}" required>
+              <input class="input" type="text" name="cif" placeholder="Ej: A12345678">
             </div>
           </div>
           <div class="field">
             <label class="label">Nombre de la Organización*</label>
             <div class="control">
-              <input class="input" type="text" name="nombre_organizacion" placeholder="Ej: Fundación Ejemplo" required>
+              <input class="input" type="text" name="nombre_organizacion" placeholder="Ej: Fundación Ejemplo">
             </div>
           </div>
           <div class="field">
             <label class="label">Dirección*</label>
             <div class="control">
-              <input class="input" type="text" name="direccion" placeholder="Ej: Calle Ejemplo, 123" required>
+              <input class="input" type="text" name="direccion" placeholder="Ej: Calle Ejemplo, 123">
             </div>
           </div>
           <div class="field">
             <label class="label">Código Postal*</label>
             <div class="control">
-              <input class="input" type="text" name="codigo_postal" placeholder="Ej: 31001" pattern="[0-9]{5}" required>
+              <input class="input" type="text" name="codigo_postal" placeholder="Ej: 31001">
             </div>
           </div>
           <div class="field">
             <label class="label">Localidad*</label>
             <div class="control">
-              <input class="input" type="text" name="localidad" placeholder="Ej: Pamplona" required>
+              <input class="input" type="text" name="localidad" placeholder="Ej: Pamplona">
             </div>
           </div>
           <div class="field">
             <label class="label">Teléfono de Contacto*</label>
             <div class="control">
-              <input class="input" type="tel" name="telefono_organizacion" placeholder="Ej: 612345678" pattern="[0-9]{9}" required>
+              <input class="input" type="tel" name="telefono_organizacion" placeholder="Ej: 612345678">
             </div>
           </div>
           <div class="field">
@@ -116,7 +115,7 @@
           </div>
           <div class="field">
             <label class="checkbox">
-              <input type="checkbox" required>
+              <input type="checkbox" id="terminos">
               Acepto los <a href="https://www.cuatrovientos.org/administrar-consentimiento" target="_blank">términos y condiciones*</a>.
             </label>
           </div>
@@ -132,6 +131,7 @@
       </div>
     </div>
   </div>
+  
 
   <div class="modal registro">
     <div class="modal-card registro">

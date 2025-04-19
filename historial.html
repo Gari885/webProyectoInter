@@ -12,6 +12,9 @@
 </head>
 
 <body>
+
+
+
   <div class="hero is-light has-text-weight-bold">
     <div class="hero-head">
       <div class="navbar container">
@@ -29,12 +32,27 @@
         <div class="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item">
-              <div class="media-content">
-                <p class="title is-6">Asier Txokarro</p>
-                <p class="subtitle is-7 rol-perfil">Voluntario/a |
-                    <a class="subtitle is-7" href="./index.html"> Cerrar sesión</a>
-                </p>
-            </div>
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="card-content perfil">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48px">
+                                            <img class="is-rounded" src="./images/FOTO-PERFIL.png" alt="Foto perfil de usuario">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-6">Asier Txokarro</p>
+                                        <p class="subtitle is-7 rol-perfil">Voluntario/a |
+                                            <a class="subtitle is-7" href="./index.html"> Cerrar sesión</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
@@ -107,29 +125,11 @@
   </div>
 
   <main>
-    <div id="actualidad" class="section">
-      <div class="container">
-        <nav class="level">
-          <div class="level-left">
-            <div class="level-item">
-              <p class="title has-text-black-bis">Actividades</p>
-            </div>
-          </div>
-          <div class="level-right">
-            <div class="level-item">
-              <div class="buttons">
-                <a href="./gestion_proyectos.html" class="button">Apuntarse</a>
-                <a href="#" class="button button is-dark">Apuntadas</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
     </div>
     
     <div class="section">
       <div class="container">
-        <p class="title has-text-centered navy">APUNTARSE A ACTIVIDAD</p>
+        <p class="title has-text-centered navy">HISTORIAL</p>
 
         <div class="container barraFiltros">
           <div class="field">
@@ -269,194 +269,47 @@
           </div>
         </div>
 
+        <div id="actividades-aceptadas" class="mt-4"></div>
+        <div id="actividades-aceptadas" class="mt-4"></div>
 
-        <div class="columns is-multiline mt-3">
-          <div class="column is-4">
-            <div class="card">
-              <div class="card-content">
-                <p class="title is-5">
-                  <i class="fa-solid fa-sun has-text-warning"></i> Voluntariado en Hospital
-
-                </p>
-
-
-                <p class="subtitle is-6">
-                  <i class="fa-solid fa-user has-text-info"></i> Responsable: María López
-                </p>
-
-
-                <p>
-                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 15 de Abril
-                </p>
-                <p>
-                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 25 de Abril
-                </p>
-
-                <p>
-                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                    class="tag is-warning">Pendiente</span>
-                  <label
-                    class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal1">
-                    <span class="icon">
-                      <i class="fas fa-info-circle"></i>
-                    </span>
-                    <span id="Actividad1" >Ver Información</span>
-                  </label>
-                </p>
-
-              </div>
-              <footer class="card-footer">
-                <button class="card-footer-item button is-success is-light">
-                  <i class="fa-solid fa-check mr-2 button-aceptar"></i> Apuntar
-                </button>
-
-              </footer>
+        <div class="container">
+          <div class="box">
+            <h4 class="title is-5">Reforestación en el Parque Central</h4>
+            <p class="subtitle is-6">Responsable: María López</p>
+            <p class="has-text-grey">Finalizado el: 12 de abril de 2025</p>
+            <div class="tags">
+              <span class="tag is-success is-light">ODS 14</span>
+              <span class="tag is-info is-light">Tipo: Ambiental</span>
             </div>
           </div>
-
-          <div class="column is-4">
-            <div class="card">
-              <div class="card-content">
-                <p class="title is-5">
-                  <i class="fa-solid fa-book-open has-text-primary"></i> Reforestación Urbana
-
-                </p>
-
-
-                <p class="subtitle is-6">
-                  <i class="fa-solid fa-user has-text-info"></i> Responsable: Alberto Rojas
-                </p>
-
-
-                <p>
-                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 10 de Abril
-                </p>
-                <p>
-                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 14 de Abril
-                </p>
-
-                <p>
-                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                    class="tag is-warning">Pendiente</span>
-                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"  data-target="modal2">
-                    <span class="icon">
-                      <i class="fas fa-info-circle"></i>
-                    </span>
-                    <span id="Actividad2">Ver Información</span>
-                  </label>
-                </p>
-
-              </div>
-              <footer class="card-footer">
-                <button class="card-footer-item button is-success is-light">
-                  <i class="fa-solid fa-check mr-2 button-acetar"></i> Apuntar
-                </button>
-
-              </footer>
+        
+          <div class="box">
+            <h4 class="title is-5">Campaña de Reciclaje en la Escuela</h4>
+            <p class="subtitle is-6">Responsable: José Ramírez</p>
+            <p class="has-text-grey">Finalizado el: 3 de marzo de 2025</p>
+            <div class="tags">
+              <span class="tag is-warning is-light">ODS 9</span>
+              <span class="tag is-primary is-light">Tipo: Educativo</span>
             </div>
           </div>
-          <div class="column is-4">
-            <div class="card">
-              <div class="card-content">
-                <p class="title is-5">
-                  <i class="fa-solid fa-utensils has-text-warning"></i> Voluntariado Comedor Social
-
-                </p>
-
-
-                <p class="subtitle is-6">
-                  <i class="fa-solid fa-user has-text-info"></i> Responsable: Juan Martínez
-                </p>
-
-
-                <p>
-                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 5 de Abril
-                </p>
-                <p>
-                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 12 de Abril
-                </p>
-
-                <p>
-                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                    class="tag is-black">En Curso</span>
-                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal3">
-                    <span class="icon">
-                      <i class="fas fa-info-circle"></i>
-                    </span>
-                    <span id="Actividad3">Ver Información</span>
-                  </label>
-                </p>
-
-              </div>
-              <footer class="card-footer">
-                <button class="card-footer-item button is-success is-light">
-                  <i class="fa-solid fa-check mr-2 button-aceptar"></i> Apuntar
-                </button>
-
-              </footer>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal modal-proyecto" id="modal1">
-          <div class="modal-background" data-close></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <p class="modal-card-title">Información del Proyecto</p>
-              <label for="modalCheckboxProyecto1" class="delete" aria-label="close"></label>
-            </header>
-            <div class="modal-card-body">
-              <p><span class="has-text-weight-bold">Nombre:</span> Voluntariado en Hospital</p>
-              <p><span class="has-text-weight-bold">Organización:</span> Fundación Nueva Esperanza</p>
-              <p><span class="has-text-weight-bold">Contacto:</span> maria.lopez@fundacionnuevaesperanza.es</p>
-              <p><span class="has-text-weight-bold">Fecha propuesta:</span> 2 de febrero</p>
-              <p><span class="has-text-weight-bold">Nº voluntarios:</span> 8</p>
-              <p><span class="has-text-weight-bold">Descripción:</span> Se busca apoyo para acompañar a pacientes en
-                recuperación.</p>
+        
+          <div class="box">
+            <h4 class="title is-5">Taller de Primeros Auxilios</h4>
+            <p class="subtitle is-6">Responsable: Ana Torres</p>
+            <p class="has-text-grey">Finalizado el: 21 de febrero de 2025</p>
+            <div class="tags">
+              <span class="tag is-danger is-light">ODS 3</span>
+              <span class="tag is-link is-light">Tipo: Salud</span>
             </div>
           </div>
         </div>
-      
-        <div class="modal modal-proyecto" id="modal2">
-          <div class="modal-background" data-close></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <p class="modal-card-title">Información del Proyecto</p>
-              <label for="modalCheckboxProyecto2" class="delete" aria-label="close"></label>
-            </header>
-            <div class="modal-card-body">
-              <p><span class="has-text-weight-bold">Nombre:</span> Reforestación Urbana</p>
-              <p><span class="has-text-weight-bold">Organización:</span> Greenpeace</p>
-              <p><span class="has-text-weight-bold">Contacto:</span> alberto.rojas@greenpeace.es</p>
-              <p><span class="has-text-weight-bold">Fecha propuesta:</span> 27 de febrero</p>
-              <p><span class="has-text-weight-bold">Nº voluntarios:</span> 3</p>
-              <p><span class="has-text-weight-bold">Descripción:</span> Participaremos en la plantación de árboles y arbustos en zonas urbanas para mejorar el medioambiente y fomentar espacios verdes en la comunidad. Además, sensibilizaremos a los vecinos sobre la importancia de la conservación ambiental.</p>
-            </div>
-          </div>
-        </div>
-      
-        <div class="modal modal-proyecto" id="modal3">
-          <div class="modal-background" data-close></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <p class="modal-card-title">Información del Proyecto</p>
-              <label for="modalCheckboxProyecto3" class="delete" aria-label="close"></label>
-            </header>
-            <div class="modal-card-body">
-              <p><span class="has-text-weight-bold">Nombre:</span> Voluntario comedor social</p>
-              <p><span class="has-text-weight-bold">Organización:</span> Paris 365</p>
-              <p><span class="has-text-weight-bold">Contacto:</span> juan.martinez@paris365.es</p>
-              <p><span class="has-text-weight-bold">Fecha propuesta:</span> 18 de febrero</p>
-              <p><span class="has-text-weight-bold">Nº voluntarios:</span> 5</p>
-              <p><span class="has-text-weight-bold">Descripción:</span> Se necesitan voluntarios para ayudar dar comidas en
-                comedor social el viernes a la noche en San Juan</p>
-            </div>
-      
-          </div>
-        </div>
+        
+          
+       
+        
       
       </div>
-        <div class="pagination" role="navigation" aria-label="pagination">
+        <div class="pagination m-4" role="navigation" aria-label="pagination">
           <a class="pagination-previous is-disabled" title="This is the first page">Previous</a>
           <a href="#" class="pagination-next">Next page</a>
           <ul class="pagination-list">
@@ -536,7 +389,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script type="text/javascript" src="actividades.js" defer></script>
+  <script type="text/javascript" src="actividadesAceptadas.js" defer></script>
 
 </body>
 
