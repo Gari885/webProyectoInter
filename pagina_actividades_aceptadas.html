@@ -13,217 +13,6 @@
 
 <body>
 
-  <div class="modal inicioSesion">
-    <div class="modal-card inicioSesion">
-      <header class="modal-card-head">
-        <p class="modal-card-title has-text-centered">Inicio de Sesión</p>
-        <label for="modalCheckboxInicio" class="delete" aria-label="close"></label>
-      </header>
-      <div class="modal-card-body">
-        <form action="./se_busca_admin.html" method="POST">
-          <div class="field">
-            <label class="label">Correo electrónico:</label>
-            <div class="control">
-              <input class="input" type="email" name="email" placeholder="correo@ejemplo.com" required>
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Contraseña:</label>
-            <div class="control">
-              <input class="input" type="password" name="password" placeholder="Tu contraseña" required>
-            </div>
-          </div>
-          <div class="field">
-            <button type="submit" class="button is-link is-fullwidth">Acceder</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal registro">
-    <div class="modal-card registro">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Hazte voluntario/a y marca la diferencia!</p>
-        <label for="modalCheckboxRegistro" class="delete" aria-label="close"></label>
-      </header>
-      <div class="modal-card-body">
-        <p class="intro-text">Envía tu candidatura para unirte a nuestro equipo de voluntariado,
-          una vez revisado te enviaremos un correo electrónico con los pasos a seguir.</p>
-        <form action="./index.html" method="POST">
-          <div class="field">
-            <label class="label">Nombre*</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Introduce tu nombre" required>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Apellidos*</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Introduce tus apellidos" required>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Fecha de nacimiento*</label>
-            <div class="control">
-              <input class="input" type="date" placeholder="Introduce tu edad" required>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Email*</label>
-            <div class="control has-icons-left">
-              <input class="input" type="email" placeholder="Introduce tu correo electrónico" required>
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Teléfono*</label>
-            <div class="control has-icons-left">
-              <input class="input" type="tel" placeholder="Número de teléfono" pattern="[0-9]{9}" required>
-              <span class="icon is-small is-left">
-                <i class="fas fa-phone"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Ciclo*</label>
-            <div class="control">
-              <div class="select">
-                <select required>
-                  <option value="">Selecciona tu Cirso</option>
-                  <option value="1º CFS Administración y Finanzas DUAL">1º CFS Administración y Finanzas DUAL</option>
-                  <option value="2º CFS Administración y Finanzas DUAL">2º CFS Administración y Finanzas DUAL</option>
-                  <option value="1º CFS Comercio Internacional DUAL BILINGÜE">1º CFS Comercio Internacional DUAL BILINGÜE
-                  </option>
-                  <option value="2º CFS Comercio Internacional DUAL BILINGÜE">2º CFS Comercio Internacional DUAL BILINGÜE
-                  </option>
-                  <option value="1º CFS Gestión de Ventas y Espacios Comerciales DUAL">1º CFS Gestión de Ventas y Espacios
-                    Comerciales DUAL</option>
-                  <option value="2º CFS Gestión de Ventas y Espacios Comerciales DUAL">2º CFS Gestión de Ventas y Espacios
-                    Comerciales DUAL</option>
-                  <option value="1º CFS Transporte y Logística DUAL">1º CFS Transporte y Logística DUAL</option>
-                  <option value="2º CFS Transporte y Logística DUAL">2º CFS Transporte y Logística DUAL</option>
-                  <option value="1º CFS Transporte y Logística Virtual">1º CFS Transporte y Logística Virtual</option>
-                  <option value="2º CFS Transporte y Logística Virtual">2º CFS Transporte y Logística Virtual</option>
-                  <option value="1º CFS Administración de Sistemas Informáticos en Red DUAL">1º CFS Administración de Sistemas
-                    Informáticos en Red DUAL</option>
-                  <option value="2º CFS Administración de Sistemas Informáticos en Red DUAL">2º CFS Administración de Sistemas
-                    Informáticos en Red DUAL</option>
-                  <option value="1º CFS Desarrollo de Aplicaciones Multiplataforma DUAL">1º CFS Desarrollo de Aplicaciones
-                    Multiplataforma DUAL</option>
-                  <option value="2º CFS Desarrollo de Aplicaciones Multiplataforma DUAL">2º CFS Desarrollo de Aplicaciones
-                    Multiplataforma DUAL</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Selecciona tus intereses</label>
-          
-            <div class="control">
-              <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="tecnologia">
-                Tecnología
-              </label>
-            </div>
-          
-            <div class="control">
-              <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="deportes">
-                Deportes
-              </label>
-            </div>
-          
-            <div class="control">
-              <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="arte">
-                Arte
-              </label>
-            </div>
-          
-            <div class="control">
-              <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="musica">
-                Música
-              </label>
-            </div>
-          
-            <div class="control">
-              <label class="checkbox">
-                <input type="checkbox" name="intereses[]" value="viajes">
-                Viajes
-              </label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">¿Tienes coche propio?*</label>
-            <div class="control">
-              <label class="radio">
-                <input type="radio" name="coche" value="si" required>
-                Sí
-              </label>
-              <label class="radio">
-                <input type="radio" name="coche" value="no" required>
-                No
-              </label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">¿Qué tipo de voluntariado te gustaría hacer?*</label>
-            <div class="control">
-              <div class="select">
-                <select required>
-                  <option value="">Tipos</option>
-                  <option value="Social">Social</option>
-                  <option value="Educativo">Educativo</option>
-                  <option value="Cultural">Cultural</option>
-                  <option value="Ambiental">Ambiental</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Deportivo">Deportivo</option>
-                  <option value="Digital">Digital</option>
-                  <option value="Digital">Técnico</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Cuentanos más sobre ti o tu experiencia previa</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Escribe tu respuesta aquí..."></textarea>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="checkbox">
-              <input type="checkbox" required>
-              Acepto los <a href="https://www.cuatrovientos.org/administrar-consentimiento" target="_blank">términos y condiciones</a>.
-            </label>
-          </div>
-
-          <footer class="modal-card-foot">
-            <div class="field">
-              <button type="submit" class="button is-link is-fullwidth">Enviar solicitud</button>
-            </div>
-            <div class="footer-logo-container">
-              <img src="./images/LOGO4V.png" alt="Voluntariado Cuatrovientos" class="footer-logo">
-            </div>
-          </footer>
-        </form>
-      </div>
-    </div>
-  </div>
-
   <div class="hero is-light has-text-weight-bold">
     <div class="hero-head">
       <div class="navbar container">
@@ -241,10 +30,12 @@
         <div class="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item">
-              <div class="buttons">
-                <label for="modalCheckboxRegistro" class="button is-info">Hazte Voluntario</label>
-                <label for="modalCheckboxInicio" class="button is-dark">Iniciar Sesión</label>
-              </div>
+              <div class="media-content">
+                <p class="title is-6">Asier Txokarro</p>
+                <p class="subtitle is-7 rol-perfil">Voluntario/a |
+                    <a class="subtitle is-7" href="./index.html"> Cerrar sesión</a>
+                </p>
+            </div>
             </div>
           </div>
         </div>
@@ -339,7 +130,7 @@
     
     <div class="section">
       <div class="container">
-        <p class="title has-text-centered navy">APUNTARSE A ACTIVIDAD</p>
+        <p class="title has-text-centered navy">ACTIVIDADES APUNTADAS</p>
 
         <div class="container barraFiltros">
           <div class="field">
@@ -565,7 +356,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script type="text/javascript" src="actividadesAceptadas.js" defer></script>
+  <script type="text/javascript" src="funcionalidades.js" defer></script>
 
 </body>
 
