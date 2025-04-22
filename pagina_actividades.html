@@ -118,8 +118,8 @@
           <div class="level-right">
             <div class="level-item">
               <div class="buttons">
-                <a href="./gestion_proyectos.html" class="button">Apuntarse</a>
-                <a href="#" class="button button is-dark">Apuntadas</a>
+                <a href="#" class="button">Apuntarse</a>
+                <a href="./pagina_actividades_aceptadas.html" class="button button is-dark">Apuntadas</a>
               </div>
             </div>
           </div>
@@ -157,7 +157,7 @@
                     <div class="dropdown-item">
                       <label class="label">Tipo:</label>
                       <div class="select">
-                        <select>
+                        <select id="tipoSelect">
                           <option value="Todos">Todos</option>
                           <option value="Social">Social</option>
                           <option value="Educativo">Educativo</option>
@@ -172,8 +172,8 @@
                     </div>
                     <div class="dropdown-item">
                       <label class="label">Organizacion:</label>
-                      <div class="select">
-                        <select>
+                      <div class="select" >
+                        <select id="orgSelect">
                           <option value="Ninguno">Ninguno</option>
                           <option value="Amavir">Amavir</option>
                           <option value="Unzutxiki">Unzutxiki</option>
@@ -240,7 +240,7 @@
                       </label>
                     </div>
                     <div class="dropdown-item">
-                      <a class="button is-link is-fullwidth" href="#">Aplicar Filtros</a>
+                      <a class="button is-link is-fullwidth" id="aplicarBtn">Aplicar Filtros</a>
                     </div>
                   </div>
                 </div>
@@ -265,13 +265,16 @@
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
 
 
         <div class="columns is-multiline mt-3">
-          <div class="column is-4">
+          <div class="column is-4"
+          data-tipo="Salud"
+          data-organizacion="Amavir"
+          data-estado="pendiente"
+          data-ods="3 5 9">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -314,7 +317,11 @@
             </div>
           </div>
 
-          <div class="column is-4">
+          <div class="column is-4"
+          data-tipo="Ambiental"
+          data-organizacion="Greenpeace"
+          data-estado="pendiente"
+          data-ods="3">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -355,7 +362,11 @@
               </footer>
             </div>
           </div>
-          <div class="column is-4">
+          <div class="column is-4"
+          data-tipo="Social"
+          data-organizacion="Paris 365"
+          data-estado="En curso"
+          data-ods="5 9">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
