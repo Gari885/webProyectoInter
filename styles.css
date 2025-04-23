@@ -718,3 +718,11 @@ input[type="checkbox"]:checked~label.toggle-label::after {
     padding: 2rem;
     color:#000080
 }
+
+.footer-miorganizacion iframe#google-maps {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}

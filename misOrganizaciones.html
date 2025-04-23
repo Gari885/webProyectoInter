@@ -134,53 +134,60 @@
                       </button>
                   </div>
                   <div class="dropdown-menu dropdown-content" id="dropdown-menu" role="menu">
-                      <div class="dropdown-item">
-                          <label class="label">Tipo:</label>
-                          <div class="select">
-                              <select>
-                                  <option value="Todos">Todos</option>
-                                  <option value="Social">Social</option>
-                                  <option value="Educativo">Educativo</option>
-                                  <option value="Cultural">Cultural</option>
-                                  <option value="Ambiental">Ambiental</option>
-                                  <option value="Salud">Salud</option>
-                                  <option value="Internacional">Internacional</option>
-                                  <option value="Deportivo">Deportivo</option>
-                                  <option value="Digital">Digital</option>
-                              </select>
-                          </div>
-                      </div>
+                      
                       <div class="dropdown-item">
                           <label class="label">Participantes:</label>
-                          <input class="input" type="number" placeholder="Número total" min="0" required>
+                          <input class="input" type="number" id="filtro-participantes" placeholder="Número total" min="0">
+
                       </div>
                       <div class="dropdown-item">
                         <label class="label">Estado:</label>
                       
                         <div class="field">
                           <label class="radio">
-                            <input type="radio" name="estado" value="curso">
+                            <input type="radio" name="filtro-estado" value="en curso">
                             En curso
                           </label>
                         </div>
                       
                         <div class="field">
                           <label class="radio">
-                            <input type="radio" name="estado" value="pendiente">
+                            <input type="radio" name="filtro-estado" value="pendiente">
                             Pendiente
                           </label>
                         </div>
                       
                         <div class="field">
                           <label class="radio">
-                            <input type="radio" name="estado" value="archivado">
+                            <input type="radio" name="filtro-estado" value="archivado">
                             Archivado
                           </label>
                         </div>
                       </div>
+                      <div class="dropdown-item">
+                        <label class="label">Tipo</label>
+                      
+                        <div class="field">
+                          <label class="radio">
+                            <input type="radio" name="filtro-tipo" value="unica">
+                            Unica
+                          </label>
+                        </div>
+                      
+                        <div class="field">
+                          <label class="radio">
+                            <input type="radio" name="filtro-tipo" value="recurrente">
+                           Recurrente
+                          </label>
+                        </div>
+                      
+                      </div>
                       
                       <div class="dropdown-item">
-                          <a href="#" class="button is-link is-fullwidth">Aplicar Filtros</a>
+                        <button id="btn-aplicar-filtros" class="button is-link is-fullwidth">Aplicar Filtros</button>
+
+                          <button id="btn-reset-filtros" class="button is-light is-fullwidth mt-2">Restablecer Filtros</button>
+
                       </div>
                   </div>
               </div>
@@ -196,8 +203,8 @@
                   </div>
                   <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
                       <div>
-                          <a href="#" class="dropdown-item">Ascendente</a>
-                          <a href="#" class="dropdown-item">Descendente</a>
+                          <a href="#" class="dropdown-item" id="ordenAsc">Ascendente</a>
+                          <a href="#" class="dropdown-item" id="ordenDesc">Descendente</a>
                       </div>
                   </div>
               </div>
@@ -534,26 +541,85 @@
             </span>
           </div>
         </div>
+        <div class="field">
+          <label class="label">Tipo de actividad*</label>
+          <div class="control">
+            <div class="select">
+              <select id="tipoActividad" name="tipoActividad" required>
+                <option value="unica">Única</option>
+                <option value="recurrente">Recurrente</option>
+              </select>
+            </div>
+          </div>
+        </div>
         
-        <div class="field">
-          <label class="label has-text-navy">Fecha inicio*</label>
-          <div class="control">
-            <input class="input has-background-white has-text-black" type="date" name="fechaInicio" required>
+        
+        <div id="camposUnica">
+          <div class="field">
+            <label class="label">Fecha inicio*</label>
+            <input class="input" type="date" name="fechaInicio">
+          </div>
+          <div class="field">
+            <label class="label">Fecha fin*</label>
+            <input class="input" type="date" name="fechaFin">
           </div>
         </div>
 
-        <div class="field">
-          <label class="label has-text-navy">Fecha fin*</label>
-          <div class="control">
-            <input class="input has-background-white has-text-black" type="date" name="fechaFin" required>
+        <div id="camposRecurrente" style="display: none;">
+          <div class="field">
+            <label class="label">Frecuencia</label>
+            <div class="select">
+              <select name="frecuencia">
+                <option value="semanal">Cada semana</option>
+                <option value="quincenal">Cada 2 semanas</option>
+                <option value="mensual">Cada mes</option>
+              </select>
+            </div>
+          </div>
+        
+          <div class="field">
+            <label class="label">Días de la semana*</label>
+            <div class="control">
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="lunes"> Lunes
+              </label>
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="martes"> Martes
+              </label>
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="miércoles"> Miércoles
+              </label>
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="jueves"> Jueves
+              </label>
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="viernes"> Viernes
+              </label>
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="sábado"> Sábado
+              </label>
+              <label class="checkbox mr-4">
+                <input type="checkbox" name="dias[]" value="domingo"> Domingo
+              </label>
+            </div>
+          </div>
+          
+        
+          <div class="field">
+            <label class="label">Desde</label>
+            <input class="input" type="date" name="desde">
+          </div>
+          <div class="field">
+            <label class="label">Hasta</label>
+            <input class="input" type="date" name="hasta">
           </div>
         </div>
-
+        
        
         <div class="field">
           <label class="label has-text-navy">Número de voluntarios necesarios*</label>
           <div class="control">
-            <input class="input has-background-white has-text-black" type="number" name="voluntarios" placeholder="Ej. 10" required>
+            <input class="input has-background-white has-text-black" type="number" name="voluntariosNecesarios" placeholder="Ej. 10" required>
           </div>
         </div>
 
@@ -579,63 +645,65 @@
   <a href="#top" id="backToTop" class="back-to-top">↑</a>
 </div>
       
-      <footer class="footer">
-        <div class="columns">
-          <div class="column">
-            <div class="content has-text-left">
-              <p class="has-text-weight-bold">CENTRO INTEGRADO CUATROVIENTOS</p>
-              <p><a href="mailto:secretaria@cuatrovientos.org">secretaria@cuatrovientos.org</a><br>
-                Tel.: 948 12 41 29</p>
-              <p>Horario Curso Escolar:<br>
-                Lunes a viernes: 9:00 – 14:00 h<br>
-                Martes: 15:30 – 18:00 h</p>
-              <p>Verano (de 15 junio a 15 septiembre): <br>
-                Lunes a viernes: 9:00 – 13:30</p>
-            </div>
-          </div>
-          <div class="column is-three-fifths is-flex is-align-items-center is-justify-content-center">
-            <div class="content has-text-centered">
-              <div class="social-icons">
-                <a href="https://www.instagram.com/cipcuatrovientos/?hl=es" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/cipcuatrovientos/" target="_blank">
-                  <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://x.com/_cuatrovientos" target="_blank">
-                  <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/4994017/admin/feed/posts/" target="_blank">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://www.youtube.com/user/alviento" target="_blank">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-              <p id="footer-text">
-                Cuatrovientos Centro Integrado &copy; 2025. Todos los derechos reservados.
-              </p>
-              <p>
-                <a href="https://www.cuatrovientos.org/aviso-legal">Aviso legal</a> |
-                <a href="https://www.cuatrovientos.org/politica-de-cookies">Política de cookies</a> |
-                <a href="https://www.cuatrovientos.org/politica-de-privacidad">Política de privacidad</a>
-              </p>
-              <p>
-                <a href="https://www.cuatrovientos.org/administrar-consentimiento">Consentimiento</a> |
-                <a href="mailto:info@cuatrovientos.org">info@cuatrovientos.org</a>
-              </p>
-              <a href="./index.html">
-                <img src="./images/LOGO4V.png" alt="Logo cuatrovientos" class="footer-logo">
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <iframe id="google-maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.299505832556!2d-1.6624343878483154!3d42.82428680552595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCuatrovientos%20Centro%20Integrado!5e0!3m2!1ses!2ses!4v1738586548208!5m2!1ses!2ses"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+<footer class="footer footer-miorganizacion">
+  <div class="columns is-multiline is-variable is-6">
+    <div class="column">
+      <div class="content has-text-left">
+        <p class="has-text-weight-bold">CENTRO INTEGRADO CUATROVIENTOS</p>
+        <p><a href="mailto:secretaria@cuatrovientos.org">secretaria@cuatrovientos.org</a><br>
+          Tel.: 948 12 41 29</p>
+        <p>Horario Curso Escolar:<br>
+          Lunes a viernes: 9:00 – 14:00 h<br>
+          Martes: 15:30 – 18:00 h</p>
+        <p>Verano (de 15 junio a 15 septiembre): <br>
+          Lunes a viernes: 9:00 – 13:30</p>
+      </div>
+    </div>
+    <div class="column is-three-fifths is-flex is-align-items-center is-justify-content-center">
+      <div class="content has-text-centered">
+        <div class="social-icons">
+          <a href="https://www.instagram.com/cipcuatrovientos/?hl=es" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/cipcuatrovientos/" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://x.com/_cuatrovientos" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/4994017/admin/feed/posts/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.youtube.com/user/alviento" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
         </div>
-      </footer>
+        <p id="footer-text">
+          Cuatrovientos Centro Integrado &copy; 2025. Todos los derechos reservados.
+        </p>
+        <p>
+          <a href="https://www.cuatrovientos.org/aviso-legal">Aviso legal</a> |
+          <a href="https://www.cuatrovientos.org/politica-de-cookies">Política de cookies</a> |
+          <a href="https://www.cuatrovientos.org/politica-de-privacidad">Política de privacidad</a>
+        </p>
+        <p>
+          <a href="https://www.cuatrovientos.org/administrar-consentimiento">Consentimiento</a> |
+          <a href="mailto:info@cuatrovientos.org">info@cuatrovientos.org</a>
+        </p>
+        <a href="./index.html">
+          <img src="./images/LOGO4V.png" alt="Logo cuatrovientos" class="footer-logo">
+        </a>
+      </div>
+    </div>
+    <div class="column">
+      <iframe id="google-maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.299505832556!2d-1.6624343878483154!3d42.82428680552595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCuatrovientos%20Centro%20Integrado!5e0!3m2!1ses!2ses!4v1738586548208!5m2!1ses!2ses"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</footer>
+
+
 
     
 <div class="modal" id="modal-ver-actividad">
