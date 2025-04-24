@@ -718,3 +718,30 @@ input[type="checkbox"]:checked~label.toggle-label::after {
     padding: 2rem;
     color:#000080
 }
+
+
+.footer-wrapper {
+    max-width: none;
+    width: 100%;
+    padding: 0 3rem;
+    margin: 0 auto;
+  }
+.footer-miorganizacion {
+    padding: 3rem 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  /* Solo aplicar en la página de misOrganizaciones */
+.pagina-organizaciones .pagination {
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .pagina-organizaciones .pagination-link,
+  .pagina-organizaciones .pagination-previous,
+  .pagina-organizaciones .pagination-next {
+    margin: 0.25rem;
+  }
+  
