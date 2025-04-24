@@ -152,4 +152,22 @@ ordenDescBtn.addEventListener("click", function (e) {
   ordenarTarjetas(false);
 });
 
+// =====================
+// SIMULACIÓN DE "APUNTARSE"
+// =====================
+const botonesApuntar = document.querySelectorAll('.card-footer-item.button');
+
+botonesApuntar.forEach(boton => {
+  boton.addEventListener('click', function () {
+    // Encuentra el contenedor .column más cercano y lo oculta
+    const columna = this.closest('.column');
+    if (columna) {
+      columna.style.display = 'none';
+    }
+  });
+});
+
+
+
+
       
