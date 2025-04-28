@@ -48,22 +48,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
+  
+    // --- Validaciones NUEVAS ---
+    let errores = [];
+  
     const datos = new FormData(form);
-    const nombre = datos.get('nombre');
-    const responsable = datos.get('responsable');
-    const contacto = datos.get('contacto');
+    const nombre = datos.get('nombre').trim();
+    const responsable = datos.get('responsable').trim();
+    const contacto = datos.get('contacto').trim();
     const tipo = datos.get('tipoActividad');
-    const voluntariosNecesarios = datos.get('voluntariosNecesarios');
-    const descripcion = datos.get('descripcion');
-
+    const voluntariosNecesarios = datos.get('voluntariosNecesarios').trim();
+    const descripcion = datos.get('descripcion').trim();
+  
+    if (!/^[a-zA-ZÁÉÍÓÚÑáéíóúñ\s]+$/.test(nombre)) {
+      errores.push("El nombre de la actividad solo debe contener letras y espacios.");
+    }
+  
+    if (!/^[a-zA-ZÁÉÍÓÚÑáéíóúñ\s]+$/.test(responsable)) {
+      errores.push("El nombre del responsable solo debe contener letras y espacios.");
+    }
+  
+    if (!/^\d{9}$/.test(contacto)) {
+      errores.push("El contacto debe tener exactamente 9 dígitos numéricos.");
+    }
+  
+    if (!tipo) {
+      errores.push("Debes seleccionar el tipo de actividad.");
+    }
+  
+    if (!descripcion) {
+      errores.push("La descripción no puede estar vacía.");
+    }
+  
+    if (!voluntariosNecesarios || parseInt(voluntariosNecesarios) <= 0) {
+      errores.push("El número de voluntarios necesarios debe ser un número mayor que 0.");
+    }
+  
+    if (tipo === "unica") {
+      const fechaInicio = datos.get('fechaInicio');
+      const fechaFin = datos.get('fechaFin');
+  
+      if (!fechaInicio) {
+        errores.push("Debes introducir una fecha de inicio.");
+      }
+      if (!fechaFin) {
+        errores.push("Debes introducir una fecha de fin.");
+      }
+      if (fechaInicio && fechaFin && new Date(fechaFin) < new Date(fechaInicio)) {
+        errores.push("La fecha de fin no puede ser anterior a la fecha de inicio.");
+      }
+    } else if (tipo === "recurrente") {
+      const desde = datos.get('desde');
+      const hasta = datos.get('hasta');
+      const diasSeleccionados = form.querySelectorAll('input[name="dias[]"]:checked');
+  
+      if (!desde) {
+        errores.push("Debes indicar la fecha 'Desde'.");
+      }
+      if (!hasta) {
+        errores.push("Debes indicar la fecha 'Hasta'.");
+      }
+      if (desde && hasta && new Date(hasta) < new Date(desde)) {
+        errores.push("La fecha 'Hasta' no puede ser anterior a la fecha 'Desde'.");
+      }
+      if (diasSeleccionados.length === 0) {
+        errores.push("Debes seleccionar al menos un día de la semana.");
+      }
+    }
+  
+    if (errores.length > 0) {
+      alert("Errores en el formulario:\n\n" + errores.join("\n"));
+      return; // Importante: NO sigue ejecutando si hay errores
+    }
+    // --- Fin de Validaciones NUEVAS ---
+  
+    // --- Tu código de crear o actualizar la tarjeta empieza aquí ---
     let fechaInicioRaw = '';
     let fechaFinRaw = '';
     let frecuencia = '';
     let dias = [];
     let desde = '';
     let hasta = '';
-
+  
     if (tipo === 'unica') {
       fechaInicioRaw = datos.get('fechaInicio');
       fechaFinRaw = datos.get('fechaFin');
@@ -75,17 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
       fechaInicioRaw = desde;
       fechaFinRaw = hasta;
     }
-
+  
     const fechaInicio = new Date(fechaInicioRaw);
     const fechaFin = new Date(fechaFinRaw);
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     fechaInicio.setHours(0, 0, 0, 0);
     fechaFin.setHours(0, 0, 0, 0);
-
+  
     let estado = '';
     let claseEstado = '';
-
+  
     if (hoy < fechaInicio) {
       estado = 'Pendiente';
       claseEstado = 'is-warning';
@@ -96,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
       estado = 'Archivado';
       claseEstado = 'is-danger';
     }
-
+  
     const fechasHTML = tipo === "unica"
       ? `
         <p><i class="fa-solid fa-calendar has-text-primary"></i> Fecha inicio: ${fechaInicioRaw}</p>
@@ -106,8 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><i class="fa-solid fa-calendar has-text-primary"></i> Desde: ${desde}</p>
         <p><i class="fa-solid fa-calendar has-text-primary"></i> Hasta: ${hasta}</p>
       `;
-
+  
     if (tarjetaEditando) {
+      // Actualizar tarjeta existente
       tarjetaEditando.setAttribute('data-descripcion', descripcion);
       tarjetaEditando.setAttribute('data-contacto', contacto);
       tarjetaEditando.setAttribute('data-voluntarios', voluntariosNecesarios);
@@ -118,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tarjetaEditando.setAttribute('data-dias', dias.join(','));
       tarjetaEditando.setAttribute('data-desde', desde);
       tarjetaEditando.setAttribute('data-hasta', hasta);
-
+  
       tarjetaEditando.querySelector('.card').innerHTML = `
         <div class="card-content">
           <p class="title is-5">${nombre}</p>
@@ -144,9 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </footer>
       `;
-
       tarjetaEditando = null;
     } else {
+      // Crear nueva tarjeta
       const nuevaTarjeta = document.createElement('div');
       nuevaTarjeta.classList.add('column', 'is-4');
       nuevaTarjeta.setAttribute('data-descripcion', descripcion);
@@ -159,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nuevaTarjeta.setAttribute('data-dias', dias.join(','));
       nuevaTarjeta.setAttribute('data-desde', desde);
       nuevaTarjeta.setAttribute('data-hasta', hasta);
-
+  
       nuevaTarjeta.innerHTML = `
         <div class="card">
           <div class="card-content">
@@ -187,14 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
           </footer>
         </div>
       `;
-
       contenedorTarjetas.insertBefore(nuevaTarjeta, contenedorTarjetas.children[1]);
     }
-
+  
     form.reset();
     cerrar();
   });
-
+  
   contenedorTarjetas.addEventListener('click', function (e) {
     const botonEditar = e.target.closest('.editar-actividad');
     const botonArchivar = e.target.closest('.archivar-actividad');
