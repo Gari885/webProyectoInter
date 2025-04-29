@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 .navy {
     color: #000080;
 }
@@ -730,6 +731,8 @@ input[type="checkbox"]:checked~label.toggle-label::after {
     padding: 3rem 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    margin-top: 2rem;
+    
   }
   /* Solo aplicar en la página de misOrganizaciones */
 .pagina-organizaciones .pagination {
@@ -744,4 +747,21 @@ input[type="checkbox"]:checked~label.toggle-label::after {
   .pagina-organizaciones .pagination-next {
     margin: 0.25rem;
   }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .layout-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
   
