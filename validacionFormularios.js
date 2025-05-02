@@ -110,6 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = form.querySelector('input[name="email"]');
   const passwordInput = form.querySelector('input[name="password"]');
 
+
+  const inputsTelefono = document.querySelectorAll('input[type="tel"]');
+  inputsTelefono.forEach(input => {
+    input.addEventListener('input', () => {
+      // Elimina todo lo que no sea número y corta a 9 dígitos
+      input.value = input.value.replace(/[^0-9]/g, '').slice(0, 9);
+    });
+  });
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -127,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       passwordInput.value = "";
     }
   });
+  
 });
 
 // BURGER NAVBAR

@@ -411,4 +411,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll(".column.is-4").forEach(tarjeta => tarjeta.style.display = "");
   });
+  // NUEVO: LIMITAR TELÉFONO A 9 DÍGITOS Y SOLO NÚMEROS
+  const inputsTelefono = document.querySelectorAll('input[type="tel"]');
+  inputsTelefono.forEach(input => {
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/[^0-9]/g, '').slice(0, 9);
+    });
+  });
 });
