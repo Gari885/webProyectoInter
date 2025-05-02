@@ -42,26 +42,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     // ORDENAR POR NOMBRE
-    const ordenarPorNombre = asc => {
-      const container = document.querySelector(".columns.is-multiline");
-      const cards = Array.from(container.children);
-      cards.sort((a, b) => {
-        const nameA = a.querySelector(".card .title")?.textContent.trim().toLowerCase() || "";
-        const nameB = b.querySelector(".card .title")?.textContent.trim().toLowerCase() || "";
-        return asc ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    function ordenarTarjetas(asc = true) {
+      const tarjetas = Array.from(contenedorTarjetas.querySelectorAll(".column.is-4"));
+    
+      tarjetas.sort((a, b) => {
+        const tituloA = a.querySelector(".title.is-5")?.textContent?.trim()?.toLowerCase() || "";
+        const tituloB = b.querySelector(".title.is-5")?.textContent?.trim()?.toLowerCase() || "";
+        return asc ? tituloA.localeCompare(tituloB) : tituloB.localeCompare(tituloA);
       });
-      cards.forEach(c => container.appendChild(c));
-    };
-  
-    document.getElementById("ordenAsc").addEventListener("click", e => {
-      e.preventDefault();
-      ordenarPorNombre(true);
-    });
-  
-    document.getElementById("ordenDesc").addEventListener("click", e => {
-      e.preventDefault();
-      ordenarPorNombre(false);
-    });
+    
+      // Eliminar todas las tarjetas del DOM y volver a insertarlas en orden
+      tarjetas.forEach(tarjeta => {
+        contenedorTarjetas.removeChild(tarjeta);
+      });
+    
+      tarjetas.forEach(tarjeta => {
+        contenedorTarjetas.appendChild(tarjeta);
+      });
+    }
+    
   
     // FILTRAR (con flatpickr rango)
     document.getElementById("aplicarFiltrosBtn").addEventListener("click", e => {
@@ -93,6 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
           const fechaOk = !fechaInicio || (cardFecha >= fechaInicio && cardFecha <= fechaFin);
       
           card.style.display = tipoOk && partOk && estadoOk && fechaOk ? "" : "none";
+          const visibleCards = Array.from(document.querySelectorAll(".column.is-4")).filter(card => card.style.display !== "none");
+          document.getElementById("no-results").style.display = visibleCards.length === 0 ? "block" : "none";
+
         });
       });
       
@@ -102,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("filtroTipo").value = "Todos";
         document.getElementById("filtroParticipantes").value = "";
         document.querySelectorAll('input[name="filtroEstado"]').forEach(r => r.checked = false);
+      
         const datepicker = document.getElementById("datepicker");
         if (datepicker._flatpickr) {
           datepicker._flatpickr.clear();
@@ -110,6 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".column.is-4").forEach(card => {
           card.style.display = "";
         });
+      
+        // 👇 Oculta el mensaje de "sin resultados"
+        document.getElementById("no-results").style.display = "none";
       });
       
       
@@ -122,8 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Activación del flatpickr en modo rango
     flatpickr("#datepicker", {
       dateFormat: "Y-m-d",
-      mode: "range"
+      mode: "range",
+      allowInput: false // desactiva escribir a mano
     });
+    
   
     // ARCHIVAR: cambia visualmente el estado del proyecto
     document.querySelectorAll(".card-footer .button.is-danger").forEach(btn => {
