@@ -179,6 +179,7 @@ if (datosGuardados) {
 
     // 🧠 Filtro avanzado por atributos
     const aplicarFiltrosBtn = document.querySelector(".aplicar-filtros-btn");
+    const mensajeSinResultados = document.getElementById("mensaje-sin-resultados");
 
     aplicarFiltrosBtn?.addEventListener("click", (e) => {
         e.preventDefault();
@@ -188,6 +189,7 @@ if (datosGuardados) {
         const curso = document.querySelector("input[name='curso']:checked")?.value.trim().toLowerCase();
         const coche = document.querySelector("input[name='coche']:checked")?.value.trim().toLowerCase();
 
+        let contadorVisibles = 0;
         document.querySelectorAll(".column.is-4").forEach(tarjeta => {
             const td = tarjeta.dataset;
 
@@ -196,9 +198,37 @@ if (datosGuardados) {
             const coincideCurso = (!curso || td.curso?.toLowerCase() === curso);
             const coincideCoche = (!coche || td.coche?.toLowerCase() === coche);
 
-            tarjeta.style.display = (coincideDisponibilidad && coincideCiclo && coincideCurso && coincideCoche) ? "" : "none";
+             const mostrar = coincideDisponibilidad && coincideCiclo && coincideCurso && coincideCoche;
+        tarjeta.style.display = mostrar ? "" : "none";
+
+        if (mostrar) contadorVisibles++;
         });
+
+         // Mostrar o ocultar mensaje según resultado
+    if (contadorVisibles === 0) {
+        mensajeSinResultados.classList.remove("is-hidden");
+    } else {
+        mensajeSinResultados.classList.add("is-hidden");
+    }
     });
+
+    // Reset filtros
+    document.getElementById("btn-reset-filtros")?.addEventListener("click", () => {
+        // Reiniciar los selects
+        document.querySelector('select[name="disponibilidad"]').value = "Todos";
+        document.querySelector('select[name="ciclo"]').value = "Todos";
+    
+        // Desmarcar los radios
+        document.querySelectorAll('input[name="curso"]').forEach(el => el.checked = false);
+        document.querySelectorAll('input[name="coche"]').forEach(el => el.checked = false);
+    
+        // Mostrar todas las tarjetas de nuevo
+        document.querySelectorAll(".column.is-4").forEach(tarjeta => tarjeta.style.display = "");
+
+        // Oculta el mensaje si estaba visible
+    mensajeSinResultados.classList.add("is-hidden");
+    });
+    
 
     // Script para abrir y cerrar modales
     const openButtons = document.querySelectorAll('.open-modal');
