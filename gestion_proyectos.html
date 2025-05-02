@@ -135,14 +135,14 @@
                 <div class="level">
                     <div class="level-left">
                         <div class="level-item">
-                            <p class="title has-text-black-bis">Gestión de proyectos</p>
+                            <p class="title has-text-black-bis">PROYECTOS</p>
                         </div>
                     </div>
                     <div class="level-right">
                         <div class="level-item">
                             <div class="buttons">
-                                <a href="#" class="button is-dark">Proyectos en curso</a>
-                                <a href="./proyectos_pendientes.html" class="button">Pendientes</a>
+                                <a href="#" class="button is-dark">Gestion proyectos</a>
+                                <a href="./proyectos_pendientes.html" class="button">Proyectos pendientes</a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
         </div>
         <div class="section">
             <div class="container">
-                <h1 class="title has-text-centered navy">Proyectos en curso</h1>
+                <h1 class="title has-text-centered navy">Gestion proyectos</h1>
 
 
 
@@ -241,8 +241,8 @@
                             </div>
                             <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
                                 <div>
-                                    <a href="#" class="dropdown-item">Ascendente</a>
-                                    <a href="#" class="dropdown-item">Descendente</a>
+                                    <a href="#" class="dropdown-item" id="ordenAsc">Ascendente</a>
+                                    <a href="#" class="dropdown-item" id="ordenDesc">Descendente</a>
                                 </div>
                             </div>
                         </div>
@@ -251,14 +251,13 @@
 
                 <div class="container">
                     <div class="columns is-multiline">
-                        <div class="column is-4">
-                            <div class="card"
-                            data-tipo="Educativo"
-                            data-participantes=3
-                            data-fecha="2025-02-10"
-                            data-id="proyecto1"
-                            data-estado="activo"
-                            >
+                        <div class="column is-4"
+                        data-tipo="Educativo"
+                        data-participantes="3"
+                        data-fecha="2025-02-10"
+                        data-id="proyecto1"
+                        data-estado="activo">
+                            <div class="card">
 
                                 
                                 <div class="card-content">
@@ -379,6 +378,10 @@
                 </div>
             </div>
         </div>
+        <p id="no-results" class="has-text-centered has-text-grey mt-4 mb-4" style="display: none;">
+            No se encontraron proyectos con los filtros seleccionados.
+        </p>
+          
     </main>
 
     <div>
@@ -444,6 +447,5 @@
     </footer>
     <script src="gestion_proyectos.js" defer></script>
     <script src="validacionFormularios.js"></script>
-    <script src="gestionProyectos.js"></script>
 </body>
 </html>
