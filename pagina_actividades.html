@@ -67,7 +67,7 @@
                 </a>
               </div>
             </div>
-    
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="hazte_voluntario_voluntario.html">
                 HAZTE VOLUNTARIO/A
@@ -84,7 +84,7 @@
                 </a>
               </div>
             </div>
-    
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="noticias_voluntario.html">
                 NOTICIAS
@@ -95,12 +95,12 @@
                 </a>
               </div>
             </div>
-    
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="#">
                 ACTIVIDADES
               </a>
-            
+
               <div class="navbar-dropdown">
                 <a class="navbar-item" href="#actividades">
                   APUNTARSE A UNA ACTIVIDAD
@@ -110,7 +110,7 @@
                 </a>
               </div>
             </div>
-    
+
           </div>
         </div>
       </nav>
@@ -137,7 +137,7 @@
         </nav>
       </div>
     </div>
-    
+
     <div class="section">
       <div class="container">
         <p class="title has-text-centered navy">APUNTARSE A UNA ACTIVIDAD</p>
@@ -151,12 +151,13 @@
               </span>
             </div>
           </div>
-          
+
           <div class="level">
             <div class="level-left">
               <div class="dropdown" id="dropdownFilter">
                 <div class="dropdown-trigger">
-                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-menu" id="filterBtn">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-menu"
+                    id="filterBtn">
                     <span>Filtrar por</span>
                     <span class="icon is-small">
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -183,7 +184,7 @@
                     </div>
                     <div class="dropdown-item">
                       <label class="label">Organizacion:</label>
-                      <div class="select" >
+                      <div class="select">
                         <select id="orgSelect">
                           <option value="Ninguno">Ninguno</option>
                           <option value="Amavir">Amavir</option>
@@ -197,15 +198,15 @@
                         <div class="column is-half">
                           <label class="checkbox">
                             <input type="checkbox" name="ods" value="1">
-                            ODS 1 
+                            ODS 1
                           </label><br>
                           <label class="checkbox">
                             <input type="checkbox" name="ods" value="2">
-                            ODS 2 
+                            ODS 2
                           </label><br>
                           <label class="checkbox">
                             <input type="checkbox" name="ods" value="3">
-                            ODS 3 
+                            ODS 3
                           </label><br>
                           <label class="checkbox">
                             <input type="checkbox" name="ods" value="5">
@@ -260,11 +261,12 @@
                 </div>
               </div>
             </div>
-        
+
             <div class="level-right">
               <div class="dropdown is-right" id="ordenDropdown">
                 <div class="dropdown-trigger">
-                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu" id="ordenTrigger">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu"
+                    id="ordenTrigger">
                     <span>Orden</span>
                     <span class="icon is-small">
                       <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -284,12 +286,8 @@
 
 
         <div class="columns is-multiline mt-3" id="contenedorTarjetas">
-          <div class="column is-4"
-          data-tipo="Salud"
-          data-organizacion="Amavir"
-          data-estado="pendiente"
-          data-ods="3 5 9"
-          data-id="actividad1">
+          <div class="column is-4" data-tipo="Salud" data-organizacion="Amavir" data-estado="pendiente" data-ods="3 5 9"
+            data-id="actividad1">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -313,16 +311,16 @@
                 <p>
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                     class="tag is-warning">Pendiente</span>
-                  <label
-                    class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal1">
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                    data-target="modal1">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span id="Actividad1" >Ver Información</span>
+                    <span id="Actividad1">Ver Información</span>
                   </label>
                 </p>
-                <p><i class="fa-solid fa-bullseye has-text-success"></i> 
-                  <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span> 
+                <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                  <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
                   <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
                   <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
                 </p>
@@ -337,13 +335,8 @@
             </div>
           </div>
 
-          <div class="column is-4"
-          data-tipo="Ambiental"
-          data-organizacion="Greenpeace"
-          data-estado="pendiente"
-          data-ods="3"
-          data-id="actividad2"
-          >
+          <div class="column is-4" data-tipo="Ambiental" data-organizacion="Greenpeace" data-estado="pendiente"
+            data-ods="3" data-id="actividad2">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -365,17 +358,18 @@
                 </p>
 
                 <p>
-                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                    class="tag is-warning">En Curso</span>
-                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"  data-target="modal2">
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span class="tag is-warning">En
+                    Curso</span>
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                    data-target="modal2">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
                     <span id="Actividad2">Ver Información</span>
                   </label>
                 </p>
-                <p><i class="fa-solid fa-bullseye has-text-success"></i> 
-                <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
+                <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                  <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
                 </p>
 
               </div>
@@ -387,13 +381,8 @@
               </footer>
             </div>
           </div>
-          <div class="column is-4"
-          data-tipo="Social"
-          data-organizacion="Paris 365"
-          data-estado="En curso"
-          data-ods="5 9"
-          data-id="actividad3"
-          >
+          <div class="column is-4" data-tipo="Social" data-organizacion="Paris 365" data-estado="En curso"
+            data-ods="5 9" data-id="actividad3">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -415,18 +404,19 @@
                 </p>
 
                 <p>
-                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                    class="tag is-black">En Curso</span>
-                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal3">
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span class="tag is-black">En
+                    Curso</span>
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                    data-target="modal3">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
                     <span id="Actividad3">Ver Información</span>
                   </label>
                 </p>
-                <p><i class="fa-solid fa-bullseye has-text-success"></i> 
-                <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span> 
-                <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
+                <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                  <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
+                  <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
                 </p>
 
               </div>
@@ -459,7 +449,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="modal modal-proyecto" id="modal2">
           <div class="modal-background" data-close></div>
           <div class="modal-card">
@@ -474,11 +464,13 @@
               <p><span class="has-text-weight-bold">Contacto:</span> alberto.rojas@greenpeace.es</p>
               <p><span class="has-text-weight-bold">Fecha propuesta:</span> 27 de febrero</p>
               <p><span class="has-text-weight-bold">Nº voluntarios:</span> 3</p>
-              <p><span class="has-text-weight-bold">Descripción:</span> Participaremos en la plantación de árboles y arbustos en zonas urbanas para mejorar el medioambiente y fomentar espacios verdes en la comunidad. Además, sensibilizaremos a los vecinos sobre la importancia de la conservación ambiental.</p>
+              <p><span class="has-text-weight-bold">Descripción:</span> Participaremos en la plantación de árboles y
+                arbustos en zonas urbanas para mejorar el medioambiente y fomentar espacios verdes en la comunidad.
+                Además, sensibilizaremos a los vecinos sobre la importancia de la conservación ambiental.</p>
             </div>
           </div>
         </div>
-      
+
         <div class="modal modal-proyecto" id="modal3">
           <div class="modal-background" data-close></div>
           <div class="modal-card">
@@ -493,14 +485,15 @@
               <p><span class="has-text-weight-bold">Contacto:</span> juan.martinez@paris365.es</p>
               <p><span class="has-text-weight-bold">Fecha propuesta:</span> 18 de febrero</p>
               <p><span class="has-text-weight-bold">Nº voluntarios:</span> 5</p>
-              <p><span class="has-text-weight-bold">Descripción:</span> Se necesitan voluntarios para ayudar dar comidas en
+              <p><span class="has-text-weight-bold">Descripción:</span> Se necesitan voluntarios para ayudar dar comidas
+                en
                 comedor social el viernes a la noche en San Juan</p>
             </div>
-      
+
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   </main>
 
 

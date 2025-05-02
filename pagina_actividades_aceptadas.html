@@ -1,517 +1,493 @@
 <!DOCTYPE html>
 <html data-theme="light" lang="es">
-  <head>
-    <title>Voluntariado Cuatrovientos</title>
-    <meta charset="utf-8">
-    <link href="./images/ICONO4V.png" rel="icon" type="image/png">
-    <link href="./bulma.css" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet">
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/75419c7891.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="hero is-light has-text-weight-bold">
-      <div class="hero-head">
-        <div class="navbar container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="./index.html">
-              <img alt="Logo cuatrovientos" src="./images/LOGO4V.png">
-            </a>
-            <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navegador" role="button">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-          <div class="navbar-menu">
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="card-content perfil">
-                  <div class="media">
-                      <div class="media-left">
-                          <figure class="image is-48x48px">
-                              <img class="is-rounded" src="./images/FOTO-PERFIL-VOLUNTARIO.png" alt="Foto perfil de usuario">
-                          </figure>
-                      </div>
-                      <div class="media-content">
-                          <p class="title is-6">Juan Manuel Cortes</p>
-                          <p class="subtitle is-7 rol-perfil">Voluntario/a |
-                              <a class="subtitle is-7" href="./index.html">Cerrar sesión</a>
-                          </p>
-                      </div>
+
+<head>
+  <title>Voluntariado Cuatrovientos</title>
+  <meta charset="utf-8">
+  <link href="./images/ICONO4V.png" rel="icon" type="image/png">
+  <link href="./bulma.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/75419c7891.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="hero is-light has-text-weight-bold">
+    <div class="hero-head">
+      <div class="navbar container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./index.html">
+            <img alt="Logo cuatrovientos" src="./images/LOGO4V.png">
+          </a>
+          <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navegador" role="button">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="card-content perfil">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48px">
+                      <img class="is-rounded" src="./images/FOTO-PERFIL-VOLUNTARIO.png" alt="Foto perfil de usuario">
+                    </figure>
                   </div>
-                </div>  
+                  <div class="media-content">
+                    <p class="title is-6">Juan Manuel Cortes</p>
+                    <p class="subtitle is-7 rol-perfil">Voluntario/a |
+                      <a class="subtitle is-7" href="./index.html">Cerrar sesión</a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="hero-footer">
-        <nav class="navbar is-light" aria-label="main navigation">
-          <div class="container is-max-desktop">
-            <div class="navbar-menu" id="navegador">
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="se_busca_voluntario.html">
-                  SE BUSCA
+    <div class="hero-footer">
+      <nav class="navbar is-light" aria-label="main navigation">
+        <div class="container is-max-desktop">
+          <div class="navbar-menu" id="navegador">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="se_busca_voluntario.html">
+                SE BUSCA
+              </a>
+              <div class="navbar-dropdown">
+                <a href="se_busca_voluntario.html#se-buscan" class="navbar-item">
+                  SE BUSCAN VOLUNTARIOS/AS
                 </a>
-                <div class="navbar-dropdown">
-                  <a href="se_busca_voluntario.html#se-buscan" class="navbar-item">
-                    SE BUSCAN VOLUNTARIOS/AS
-                  </a>
-                  <a href="se_busca_voluntario.html#pasos" class="navbar-item">
-                    PASOS PARA SER VOLUNTARIO/A
-                  </a>
-                </div>
-              </div>
-      
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="hazte_voluntario_voluntario.html">
-                  HAZTE VOLUNTARIO/A
+                <a href="se_busca_voluntario.html#pasos" class="navbar-item">
+                  PASOS PARA SER VOLUNTARIO/A
                 </a>
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="hazte_voluntario_voluntario.html#quienes-somos">
-                    ¿QUIÉNES SOMOS?
-                  </a>
-                  <a class="navbar-item" href="hazte_voluntario_voluntario.html#que-hacemos">
-                    ¿QUÉ HACEMOS?
-                  </a>
-                  <a class="navbar-item" href="hazte_voluntario_voluntario.html#preguntas-frecuentes">
-                    PREGUNTAS FRECUENTES (FAQ)
-                  </a>
-                </div>
               </div>
-      
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="noticias_voluntario.html">
-                  NOTICIAS
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="hazte_voluntario_voluntario.html">
+                HAZTE VOLUNTARIO/A
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="hazte_voluntario_voluntario.html#quienes-somos">
+                  ¿QUIÉNES SOMOS?
                 </a>
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="noticias_voluntario.html#actualidad">
-                    ACTUALIDAD EN EL VOLUNTARIADO
-                  </a>
-                </div>
-              </div>
-      
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="pagina_actividades.html">
-                  ACTIVIDADES
+                <a class="navbar-item" href="hazte_voluntario_voluntario.html#que-hacemos">
+                  ¿QUÉ HACEMOS?
                 </a>
-              
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="pagina_actividades.html#actividades">
-                    APUNTARSE A UNA ACTIVIDAD
-                  </a>
-                  <a class="navbar-item" href="./historial.html">
-                    MI HISTORIAL
-                  </a>
-                </div>
+                <a class="navbar-item" href="hazte_voluntario_voluntario.html#preguntas-frecuentes">
+                  PREGUNTAS FRECUENTES (FAQ)
+                </a>
               </div>
-      
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="noticias_voluntario.html">
+                NOTICIAS
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="noticias_voluntario.html#actualidad">
+                  ACTUALIDAD EN EL VOLUNTARIADO
+                </a>
+              </div>
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="pagina_actividades.html">
+                ACTIVIDADES
+              </a>
+
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="pagina_actividades.html#actividades">
+                  APUNTARSE A UNA ACTIVIDAD
+                </a>
+                <a class="navbar-item" href="./historial.html">
+                  MI HISTORIAL
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div class="section" id="actividades">
+      <div class="container">
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p class="title has-text-black-bis">Actividades</p>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <div class="buttons">
+                <a class="button" href="./pagina_actividades.html">Actividades disponibles</a>
+                <a class="button button is-dark" href="#">Mis actividades</a>
+              </div>
             </div>
           </div>
         </nav>
       </div>
     </div>
-
-    <main>
-      <div class="section" id="actividades">
-        <div class="container">
-          <nav class="level">
+    <div class="section">
+      <div class="container">
+        <p class="title has-text-centered navy">MIS ACTIVIDADES</p>
+        <div class="container barraFiltros">
+          <div class="field">
+            <div class="control has-icons-left">
+              <input class="input" id="searchInput" placeholder="Buscar actividades..." type="text">
+              <span class="icon is-left has-text-primary">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
+          </div>
+          <div class="level">
             <div class="level-left">
-              <div class="level-item">
-                <p class="title has-text-black-bis">Actividades</p>
+              <div class="dropdown" id="dropdownFilter">
+                <div class="dropdown-trigger">
+                  <button aria-controls="dropdown-menu" aria-haspopup="true" class="button is-link has-text-white"
+                    id="filterBtn">
+                    <span>Filtrar por</span>
+                    <span class="icon is-small">
+                      <i aria-hidden="true" class="fas fa-angle-down"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item">
+                      <label class="label">Tipo:</label>
+                      <div class="select">
+                        <select id="selectTipo">
+                          <option value="Todos">Todos</option>
+                          <option value="Social">Social</option>
+                          <option value="Educativo">Educativo</option>
+                          <option value="Cultural">Cultural</option>
+                          <option value="Ambiental">Ambiental</option>
+                          <option value="Salud">Salud</option>
+                          <option value="Internacional">Internacional</option>
+                          <option value="Deportivo">Deportivo</option>
+                          <option value="Digital">Digital</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">Organizacion:</label>
+                      <div class="select">
+                        <select id="selectOrganizacion">
+                          <option value="Ninguno">Ninguno</option>
+                          <option value="Amavir">Amavir</option>
+                          <option value="Unzutxiki">Unzutxiki</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">ODS</label>
+                      <div class="columns is-multiline">
+                        <div class="column is-half">
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="1">
+                            ODS 1 </label><br>
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="2">
+                            ODS 2 </label><br>
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="3">
+                            ODS 3 </label><br>
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="5">
+                            ODS 5 </label><br>
+                        </div>
+                        <div class="column is-half">
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="9">
+                            ODS 9 </label><br>
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="14">
+                            ODS 14 </label><br>
+                          <label class="checkbox">
+                            <input name="ods" type="checkbox" value="17">
+                            ODS 17 </label><br>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <button class="button is-link is-small" id="toggle-calendar">
+                        📅 Calendario
+                      </button>
+                      <div class="mt-2" id="calendar-container" style="display: none">
+                        <label class="label">Selecciona una fecha</label>
+                        <div class="control">
+                          <input class="input" id="datepicker" placeholder="Selecciona una fecha" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-item">
+                      <label class="label">Estado:</label>
+                      <label class="radio">
+                        <input name="estado" type="radio" value="pendiente">
+                        Pendiente
+                      </label>
+                      <label class="radio">
+                        <input name="estado" type="radio" value="en-curso">
+                        En Curso
+                      </label>
+                    </div>
+                    <div class="dropdown-item">
+                      <a class="button is-link is-fullwidth" href="#" id="aplicarFiltrosBtn">Aplicar Filtros</a>
+                    </div>
+                    <div class="dropdown-item">
+                      <a id="limpiarFiltrosBtn" href="#" class="button is-light is-fullwidth">Limpiar Filtros</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="level-right">
-              <div class="level-item">
-                <div class="buttons">
-                  <a class="button" href="./pagina_actividades.html">Actividades disponibles</a>
-                  <a class="button button is-dark" href="#">Mis actividades</a>
+              <div class="dropdown is-right" id="ordenDropdown">
+                <div class="dropdown-trigger">
+                  <button aria-controls="dropdown-order-menu" aria-haspopup="true" class="button is-link has-text-white"
+                    id="ordenTrigger">
+                    <span>Orden</span>
+                    <span class="icon is-small">
+                      <i aria-hidden="true" class="fas fa-angle-down"></i>
+                    </span>
+                  </button>
                 </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <p class="title has-text-centered navy">MIS ACTIVIDADES</p>
-          <div class="container barraFiltros">
-            <div class="field">
-              <div class="control has-icons-left">
-                <input class="input" id="searchInput" placeholder="Buscar actividades..." type="text">
-                <span class="icon is-left has-text-primary">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </span>
-              </div>
-            </div>
-            <div class="level">
-              <div class="level-left">
-                <div class="dropdown" id="dropdownFilter">
-                  <div class="dropdown-trigger">
-                    <button aria-controls="dropdown-menu" aria-haspopup="true" class="button is-link has-text-white"
-                      id="filterBtn">
-                      <span>Filtrar por</span>
-                      <span class="icon is-small">
-                        <i aria-hidden="true" class="fas fa-angle-down"></i>
-                      </span>
-                    </button>
-                  </div>
-                  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                      <div class="dropdown-item">
-                        <label class="label">Tipo:</label>
-                        <div class="select">
-                          <select id="selectTipo">
-                            <option value="Todos">Todos</option>
-                            <option value="Social">Social</option>
-                            <option value="Educativo">Educativo</option>
-                            <option value="Cultural">Cultural</option>
-                            <option value="Ambiental">Ambiental</option>
-                            <option value="Salud">Salud</option>
-                            <option value="Internacional">Internacional</option>
-                            <option value="Deportivo">Deportivo</option>
-                            <option value="Digital">Digital</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="dropdown-item">
-                        <label class="label">Organizacion:</label>
-                        <div class="select">
-                          <select id="selectOrganizacion">
-                            <option value="Ninguno">Ninguno</option>
-                            <option value="Amavir">Amavir</option>
-                            <option value="Unzutxiki">Unzutxiki</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="dropdown-item">
-                        <label class="label">ODS</label>
-                        <div class="columns is-multiline">
-                          <div class="column is-half">
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="1">
-                              ODS 1 </label><br>
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="2">
-                              ODS 2 </label><br>
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="3">
-                              ODS 3 </label><br>
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="5">
-                              ODS 5 </label><br>
-                          </div>
-                          <div class="column is-half">
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="9">
-                              ODS 9 </label><br>
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="14">
-                              ODS 14 </label><br>
-                            <label class="checkbox">
-                              <input name="ods" type="checkbox" value="17">
-                              ODS 17 </label><br>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="dropdown-item">
-                        <button class="button is-link is-small" id="toggle-calendar">
-                          📅 Calendario
-                        </button>
-                        <div class="mt-2" id="calendar-container" style="display: none">
-                          <label class="label">Selecciona una fecha</label>
-                          <div class="control">
-                            <input class="input" id="datepicker" placeholder="Selecciona una fecha" type="text">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="dropdown-item">
-                        <label class="label">Estado:</label>
-                        <label class="radio">
-                          <input name="estado" type="radio" value="pendiente">
-                          Pendiente
-                        </label>
-                        <label class="radio">
-                          <input name="estado" type="radio" value="en-curso">
-                          En Curso
-                        </label>
-                      </div>
-                      <div class="dropdown-item">
-                        <a class="button is-link is-fullwidth" href="#" id="aplicarFiltrosBtn">Aplicar Filtros</a>
-                      </div>
-                      <div class="dropdown-item">
-                        <a id="limpiarFiltrosBtn" href="#" class="button is-light is-fullwidth">Limpiar Filtros</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="dropdown is-right" id="ordenDropdown">
-                  <div class="dropdown-trigger">
-                    <button aria-controls="dropdown-order-menu" aria-haspopup="true" class="button is-link has-text-white"
-                      id="ordenTrigger">
-                      <span>Orden</span>
-                      <span class="icon is-small">
-                        <i aria-hidden="true" class="fas fa-angle-down"></i>
-                      </span>
-                    </button>
-                  </div>
-                  <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
-                    <div>
-                      <a class="dropdown-item" href="#" id="ordenAsc">Ascendente</a>
-                      <a class="dropdown-item" href="#" id="ordenDesc">Descendente</a>
-                    </div>
+                <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
+                  <div>
+                    <a class="dropdown-item" href="#" id="ordenAsc">Ascendente</a>
+                    <a class="dropdown-item" href="#" id="ordenDesc">Descendente</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="columns is-multiline mt-3" id="contenedorTarjetas">
-            <div class="column is-4" data-tipo="Salud" data-organizacion="Amavir" data-estado="pendiente" data-ods="3 5 9"
-              data-id="actividad1">
-              <div class="card">
-                <div class="card-content">
-                  <p class="title is-5">
-                    <i class="fa-solid fa-sun has-text-warning"></i> Voluntariado en Hospital
-                  </p>
-    
-                  <p class="subtitle is-6">
-                    <i class="fa-solid fa-user has-text-info"></i> Responsable: María López
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 15 de Abril
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 25 de Abril
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                      class="tag is-warning">Pendiente</span>
-                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
-                      data-target="modal1">
-                      <span class="icon">
-                        <i class="fas fa-info-circle"></i>
-                      </span>
-                      <span id="Actividad1">Ver Información</span>
-                    </label>
-                  </p>
-                  <p><i class="fa-solid fa-bullseye has-text-success"></i>
-                    <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
-                    <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
-                    <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
-                  </p>
-    
-                </div>
-                <footer class="card-footer">
-                  <button class="card-footer-item button is-success is-light button-desapuntar">
-                    <i class="fa-solid fa-check mr-2"></i> Desapuntar
-                  </button>
-                </footer>
-              </div>
-            </div>
-    
-            <div class="column is-4" data-tipo="Ambiental" data-organizacion="Greenpeace" data-estado="pendiente"
-              data-ods="3" data-id="actividad2">
-              <div class="card">
-                <div class="card-content">
-                  <p class="title is-5">
-                    <i class="fa-solid fa-book-open has-text-primary"></i> Reforestación Urbana
-                  </p>
-    
-                  <p class="subtitle is-6">
-                    <i class="fa-solid fa-user has-text-info"></i> Responsable: Alberto Rojas
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 10 de Abril
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 14 de Abril
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                      class="tag is-warning">Pendiente</span>
-                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
-                      data-target="modal2">
-                      <span class="icon">
-                        <i class="fas fa-info-circle"></i>
-                      </span>
-                      <span id="Actividad2">Ver Información</span>
-                    </label>
-                  </p>
-    
-                  <p><i class="fa-solid fa-bullseye has-text-success"></i>
-                    <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
-                  </p>
-    
-                </div>
-    
-                <footer class="card-footer">
-                  <button class="card-footer-item button is-success is-light button-desapuntar">
-                    <i class="fa-solid fa-check mr-2 "></i> Desapuntar
-                  </button>
-                </footer>
-              </div>
-            </div>
-            <div class="column is-4" data-tipo="Social" data-organizacion="Paris 365" data-estado="En curso" data-ods="5 9"
-              data-id="actividad3">
-              <div class="card">
-                <div class="card-content">
-                  <p class="title is-5">
-                    <i class="fa-solid fa-utensils has-text-warning"></i> Voluntariado Comedor Social
-                  </p>
-    
-                  <p class="subtitle is-6">
-                    <i class="fa-solid fa-user has-text-info"></i> Responsable: Juan Martínez
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 5 de Abril
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 12 de Abril
-                  </p>
-    
-                  <p>
-                    <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span class="tag is-black">En Curso</span>
-                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
-                      data-target="modal3">
-                      <span class="icon">
-                        <i class="fas fa-info-circle"></i>
-                      </span>
-                      <span id="Actividad3">Ver Información</span>
-                    </label>
-                  </p>
-    
-                  <p><i class="fa-solid fa-bullseye has-text-success"></i>
-                    <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
-                    <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
-                  </p>
-    
-                </div>
-    
-                <footer class="card-footer">
-                  <button class="card-footer-item button is-success is-light button-desapuntar">
-                    <i class="fa-solid fa-check mr-2 "></i> Desapuntar
-                  </button>
-                </footer>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </main>
+        <div class="columns is-multiline mt-3" id="contenedorTarjetas">
+          <div class="column is-4" data-tipo="Salud" data-organizacion="Amavir" data-estado="pendiente" data-ods="3 5 9"
+            data-id="actividad1">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-5">
+                  <i class="fa-solid fa-sun has-text-warning"></i> Voluntariado en Hospital
+                </p>
 
-    <div>
-      <a class="back-to-top" href="#top" id="backToTop">↑</a>
+                <p class="subtitle is-6">
+                  <i class="fa-solid fa-user has-text-info"></i> Responsable: María López
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 15 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 25 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
+                    class="tag is-warning">Pendiente</span>
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                    data-target="modal1">
+                    <span class="icon">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span id="Actividad1">Ver Información</span>
+                  </label>
+                </p>
+                <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                  <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
+                  <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
+                  <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
+                </p>
+
+              </div>
+              <footer class="card-footer">
+                <button class="card-footer-item button is-success is-light button-desapuntar">
+                  <i class="fa-solid fa-check mr-2"></i> Desapuntar
+                </button>
+              </footer>
+            </div>
+          </div>
+
+          <div class="column is-4" data-tipo="Ambiental" data-organizacion="Greenpeace" data-estado="pendiente"
+            data-ods="3" data-id="actividad2">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-5">
+                  <i class="fa-solid fa-book-open has-text-primary"></i> Reforestación Urbana
+                </p>
+
+                <p class="subtitle is-6">
+                  <i class="fa-solid fa-user has-text-info"></i> Responsable: Alberto Rojas
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 10 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 14 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
+                    class="tag is-warning">Pendiente</span>
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                    data-target="modal2">
+                    <span class="icon">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span id="Actividad2">Ver Información</span>
+                  </label>
+                </p>
+
+                <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                  <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
+                </p>
+
+              </div>
+
+              <footer class="card-footer">
+                <button class="card-footer-item button is-success is-light button-desapuntar">
+                  <i class="fa-solid fa-check mr-2 "></i> Desapuntar
+                </button>
+              </footer>
+            </div>
+          </div>
+          <div class="column is-4" data-tipo="Social" data-organizacion="Paris 365" data-estado="En curso"
+            data-ods="5 9" data-id="actividad3">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-5">
+                  <i class="fa-solid fa-utensils has-text-warning"></i> Voluntariado Comedor Social
+                </p>
+
+                <p class="subtitle is-6">
+                  <i class="fa-solid fa-user has-text-info"></i> Responsable: Juan Martínez
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 5 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 12 de Abril
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span class="tag is-black">En
+                    Curso</span>
+                  <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                    data-target="modal3">
+                    <span class="icon">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span id="Actividad3">Ver Información</span>
+                  </label>
+                </p>
+
+                <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                  <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
+                  <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
+                </p>
+
+              </div>
+
+              <footer class="card-footer">
+                <button class="card-footer-item button is-success is-light button-desapuntar">
+                  <i class="fa-solid fa-check mr-2 "></i> Desapuntar
+                </button>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <footer class="footer mt-2">
-      <div class="columns">
-        <div class="column">
-          <div class="content has-text-left">
-            <p class="has-text-weight-bold">CENTRO INTEGRADO CUATROVIENTOS</p>
-            <p>
-              <a href="mailto:secretaria@cuatrovientos.org"
-                >secretaria@cuatrovientos.org</a
-              ><br>
-              Tel.: 948 12 41 29
-            </p>
-            <p>
-              Horario Curso Escolar:<br>
-              Lunes a viernes: 9:00 – 14:00 h<br>
-              Martes: 15:30 – 18:00 h
-            </p>
-            <p>
-              Verano (de 15 junio a 15 septiembre): <br>
-              Lunes a viernes: 9:00 – 13:30
-            </p>
-          </div>
+  <div>
+    <a class="back-to-top" href="#top" id="backToTop">↑</a>
+  </div>
+
+  <footer class="footer mt-2">
+    <div class="columns">
+      <div class="column">
+        <div class="content has-text-left">
+          <p class="has-text-weight-bold">CENTRO INTEGRADO CUATROVIENTOS</p>
+          <p>
+            <a href="mailto:secretaria@cuatrovientos.org">secretaria@cuatrovientos.org</a><br>
+            Tel.: 948 12 41 29
+          </p>
+          <p>
+            Horario Curso Escolar:<br>
+            Lunes a viernes: 9:00 – 14:00 h<br>
+            Martes: 15:30 – 18:00 h
+          </p>
+          <p>
+            Verano (de 15 junio a 15 septiembre): <br>
+            Lunes a viernes: 9:00 – 13:30
+          </p>
         </div>
-        <div
-          class="column is-three-fifths is-flex is-align-items-center is-justify-content-center">
-          <div class="content has-text-centered">
-            <div class="social-icons">
-              <a
-                href="https://www.instagram.com/cipcuatrovientos/?hl=es"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/cipcuatrovientos/"
-                target="_blank"
-              >
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://x.com/_cuatrovientos" target="_blank">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/4994017/admin/feed/posts/"
-                target="_blank"
-              >
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://www.youtube.com/user/alviento" target="_blank">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </div>
-            <p id="footer-text">
-              Cuatrovientos Centro Integrado © 2025. Todos los derechos
-              reservados.
-            </p>
-            <p>
-              <a href="https://www.cuatrovientos.org/aviso-legal"
-                >Aviso legal</a
-              >
-              |
-              <a href="https://www.cuatrovientos.org/politica-de-cookies"
-                >Política de cookies</a
-              >
-              |
-              <a href="https://www.cuatrovientos.org/politica-de-privacidad"
-                >Política de privacidad</a
-              >
-            </p>
-            <p>
-              <a href="https://www.cuatrovientos.org/administrar-consentimiento"
-                >Consentimiento</a
-              >
-              |
-              <a href="mailto:info@cuatrovientos.org">info@cuatrovientos.org</a>
-            </p>
-            <a href="./index.html">
-              <img
-                alt="Logo cuatrovientos"
-                class="footer-logo"
-                src="./images/LOGO4V.png">
+      </div>
+      <div class="column is-three-fifths is-flex is-align-items-center is-justify-content-center">
+        <div class="content has-text-centered">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/cipcuatrovientos/?hl=es" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/cipcuatrovientos/" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/_cuatrovientos" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/4994017/admin/feed/posts/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/user/alviento" target="_blank">
+              <i class="fab fa-youtube"></i>
             </a>
           </div>
-        </div>
-        <div class="column">
-          <iframe
-            allowfullscreen=""
-            id="google-maps"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.299505832556!2d-1.6624343878483154!3d42.82428680552595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCuatrovientos%20Centro%20Integrado!5e0!3m2!1ses!2ses!4v1738586548208!5m2!1ses!2ses"
-          ></iframe>
+          <p id="footer-text">
+            Cuatrovientos Centro Integrado © 2025. Todos los derechos
+            reservados.
+          </p>
+          <p>
+            <a href="https://www.cuatrovientos.org/aviso-legal">Aviso legal</a>
+            |
+            <a href="https://www.cuatrovientos.org/politica-de-cookies">Política de cookies</a>
+            |
+            <a href="https://www.cuatrovientos.org/politica-de-privacidad">Política de privacidad</a>
+          </p>
+          <p>
+            <a href="https://www.cuatrovientos.org/administrar-consentimiento">Consentimiento</a>
+            |
+            <a href="mailto:info@cuatrovientos.org">info@cuatrovientos.org</a>
+          </p>
+          <a href="./index.html">
+            <img alt="Logo cuatrovientos" class="footer-logo" src="./images/LOGO4V.png">
+          </a>
         </div>
       </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script defer="" src="pagina_actividades_aceptadas.js"></script>
-    <script src="validacionFormularios.js"></script>
-  </body>
+      <div class="column">
+        <iframe allowfullscreen="" id="google-maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.299505832556!2d-1.6624343878483154!3d42.82428680552595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCuatrovientos%20Centro%20Integrado!5e0!3m2!1ses!2ses!4v1738586548208!5m2!1ses!2ses"></iframe>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script defer="" src="pagina_actividades_aceptadas.js"></script>
+  <script src="validacionFormularios.js"></script>
+</body>
+
 </html>
