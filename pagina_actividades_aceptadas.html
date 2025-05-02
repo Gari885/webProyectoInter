@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-
 <html data-theme="light" lang="es">
   <head>
     <title>Voluntariado Cuatrovientos</title>
-    <meta charset="utf-8" />
-    <link href="./images/ICONO4V.png" rel="icon" type="image/png" />
-    <link href="./bulma.css" rel="stylesheet" />
-    <link href="./styles.css" rel="stylesheet" />
-    <script
-      crossorigin="anonymous"
-      src="https://kit.fontawesome.com/75419c7891.js"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-      rel="stylesheet"
-    />
+    <meta charset="utf-8">
+    <link href="./images/ICONO4V.png" rel="icon" type="image/png">
+    <link href="./bulma.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/75419c7891.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="hero is-light has-text-weight-bold">
@@ -22,15 +15,9 @@
         <div class="navbar container">
           <div class="navbar-brand">
             <a class="navbar-item" href="./index.html">
-              <img alt="Logo cuatrovientos" src="./images/LOGO4V.png" />
+              <img alt="Logo cuatrovientos" src="./images/LOGO4V.png">
             </a>
-            <a
-              aria-expanded="false"
-              aria-label="menu"
-              class="navbar-burger"
-              data-target="navegador"
-              role="button"
-            >
+            <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navegador" role="button">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -45,8 +32,7 @@
                   <p class="subtitle is-7 rol-perfil">
                     Voluntario/a |
                     <a class="subtitle is-7" href="./index.html">
-                      Cerrar sesión</a
-                    >
+                      Cerrar sesión</a>
                   </p>
                 </div>
               </div>
@@ -138,9 +124,7 @@
             <div class="level-right">
               <div class="level-item">
                 <div class="buttons">
-                  <a class="button" href="./pagina_actividades.html"
-                    >Apuntarse</a
-                  >
+                  <a class="button" href="./pagina_actividades.html">Apuntarse</a>
                   <a class="button button is-dark" href="#">Apuntadas</a>
                 </div>
               </div>
@@ -154,12 +138,7 @@
           <div class="container barraFiltros">
             <div class="field">
               <div class="control has-icons-left">
-                <input
-                  class="input"
-                  id="searchInput"
-                  placeholder="Buscar actividades..."
-                  type="text"
-                />
+                <input class="input" id="searchInput" placeholder="Buscar actividades..." type="text">
                 <span class="icon is-left has-text-primary">
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </span>
@@ -169,12 +148,8 @@
               <div class="level-left">
                 <div class="dropdown" id="dropdownFilter">
                   <div class="dropdown-trigger">
-                    <button
-                      aria-controls="dropdown-menu"
-                      aria-haspopup="true"
-                      class="button is-link has-text-white"
-                      id="filterBtn"
-                    >
+                    <button aria-controls="dropdown-menu" aria-haspopup="true" class="button is-link has-text-white"
+                      id="filterBtn">
                       <span>Filtrar por</span>
                       <span class="icon is-small">
                         <i aria-hidden="true" class="fas fa-angle-down"></i>
@@ -214,78 +189,55 @@
                         <div class="columns is-multiline">
                           <div class="column is-half">
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="1" />
-                              ODS 1 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="1">
+                              ODS 1 </label><br>
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="2" />
-                              ODS 2 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="2">
+                              ODS 2 </label><br>
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="3" />
-                              ODS 3 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="3">
+                              ODS 3 </label><br>
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="5" />
-                              ODS 5 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="5">
+                              ODS 5 </label><br>
                           </div>
                           <div class="column is-half">
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="9" />
-                              ODS 9 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="9">
+                              ODS 9 </label><br>
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="14" />
-                              ODS 14 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="14">
+                              ODS 14 </label><br>
                             <label class="checkbox">
-                              <input name="ods" type="checkbox" value="17" />
-                              ODS 17 </label
-                            ><br />
+                              <input name="ods" type="checkbox" value="17">
+                              ODS 17 </label><br>
                           </div>
                         </div>
                       </div>
                       <div class="dropdown-item">
-                        <button
-                          class="button is-link is-small"
-                          id="toggle-calendar"
-                        >
+                        <button class="button is-link is-small" id="toggle-calendar">
                           📅 Calendario
                         </button>
-                        <div
-                          class="mt-2"
-                          id="calendar-container"
-                          style="display: none"
-                        >
+                        <div class="mt-2" id="calendar-container" style="display: none">
                           <label class="label">Selecciona una fecha</label>
                           <div class="control">
-                            <input
-                              class="input"
-                              id="datepicker"
-                              placeholder="Selecciona una fecha"
-                              type="text"
-                            />
+                            <input class="input" id="datepicker" placeholder="Selecciona una fecha" type="text">
                           </div>
                         </div>
                       </div>
                       <div class="dropdown-item">
                         <label class="label">Estado:</label>
                         <label class="radio">
-                          <input name="estado" type="radio" value="pendiente" />
+                          <input name="estado" type="radio" value="pendiente">
                           Pendiente
                         </label>
                         <label class="radio">
-                          <input name="estado" type="radio" value="en-curso" />
+                          <input name="estado" type="radio" value="en-curso">
                           En Curso
                         </label>
                       </div>
                       <div class="dropdown-item">
-                        <a
-                          class="button is-link is-fullwidth"
-                          href="#"
-                          id="aplicarFiltrosBtn"
-                          >Aplicar Filtros</a>
+                        <a class="button is-link is-fullwidth" href="#" id="aplicarFiltrosBtn">Aplicar Filtros</a>
                       </div>
                       <div class="dropdown-item">
                         <a id="limpiarFiltrosBtn" href="#" class="button is-light is-fullwidth">Limpiar Filtros</a>
@@ -297,30 +249,18 @@
               <div class="level-right">
                 <div class="dropdown is-right" id="ordenDropdown">
                   <div class="dropdown-trigger">
-                    <button
-                      aria-controls="dropdown-order-menu"
-                      aria-haspopup="true"
-                      class="button is-link has-text-white"
-                      id="ordenTrigger"
-                    >
+                    <button aria-controls="dropdown-order-menu" aria-haspopup="true" class="button is-link has-text-white"
+                      id="ordenTrigger">
                       <span>Orden</span>
                       <span class="icon is-small">
                         <i aria-hidden="true" class="fas fa-angle-down"></i>
                       </span>
                     </button>
                   </div>
-                  <div
-                    class="dropdown-menu dropdown-content"
-                    id="dropdown-order-menu"
-                    role="menu"
-                  >
+                  <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
                     <div>
-                      <a class="dropdown-item" href="#" id="ordenAsc"
-                        >Ascendente</a
-                      >
-                      <a class="dropdown-item" href="#" id="ordenDesc"
-                        >Descendente</a
-                      >
+                      <a class="dropdown-item" href="#" id="ordenAsc">Ascendente</a>
+                      <a class="dropdown-item" href="#" id="ordenDesc">Descendente</a>
                     </div>
                   </div>
                 </div>
@@ -328,168 +268,151 @@
             </div>
           </div>
           <div class="columns is-multiline mt-3" id="contenedorTarjetas">
-            <div class="column is-4"
-            data-tipo="Salud"
-            data-organizacion="Amavir"
-            data-estado="pendiente"
-            data-ods="3 5 9"
-            data-id="actividad1">
+            <div class="column is-4" data-tipo="Salud" data-organizacion="Amavir" data-estado="pendiente" data-ods="3 5 9"
+              data-id="actividad1">
               <div class="card">
                 <div class="card-content">
                   <p class="title is-5">
                     <i class="fa-solid fa-sun has-text-warning"></i> Voluntariado en Hospital
-  
                   </p>
-  
-  
+    
                   <p class="subtitle is-6">
                     <i class="fa-solid fa-user has-text-info"></i> Responsable: María López
                   </p>
-  
-  
+    
                   <p>
                     <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 15 de Abril
                   </p>
+    
                   <p>
                     <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 25 de Abril
                   </p>
-  
+    
                   <p>
                     <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                       class="tag is-warning">Pendiente</span>
-                    <label
-                      class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal1">
+                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                      data-target="modal1">
                       <span class="icon">
                         <i class="fas fa-info-circle"></i>
                       </span>
-                      <span id="Actividad1" >Ver Información</span>
+                      <span id="Actividad1">Ver Información</span>
                     </label>
                   </p>
-                  <p><i class="fa-solid fa-bullseye has-text-success"></i> 
-                    <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span> 
-                    <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span> <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span></p>
+                  <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                    <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
+                    <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
+                    <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
                   </p>
-  
+    
                 </div>
                 <footer class="card-footer">
                   <button class="card-footer-item button is-success is-light button-desapuntar">
                     <i class="fa-solid fa-check mr-2"></i> Desapuntar
                   </button>
-  
                 </footer>
               </div>
             </div>
-  
-            <div class="column is-4"
-            data-tipo="Ambiental"
-            data-organizacion="Greenpeace"
-            data-estado="pendiente"
-            data-ods="3"
-            data-id="actividad2"
-            >
+    
+            <div class="column is-4" data-tipo="Ambiental" data-organizacion="Greenpeace" data-estado="pendiente"
+              data-ods="3" data-id="actividad2">
               <div class="card">
                 <div class="card-content">
                   <p class="title is-5">
                     <i class="fa-solid fa-book-open has-text-primary"></i> Reforestación Urbana
-  
                   </p>
-  
-  
+    
                   <p class="subtitle is-6">
                     <i class="fa-solid fa-user has-text-info"></i> Responsable: Alberto Rojas
                   </p>
-  
-  
+    
                   <p>
                     <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 10 de Abril
                   </p>
+    
                   <p>
                     <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 14 de Abril
                   </p>
-  
+    
                   <p>
                     <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                       class="tag is-warning">Pendiente</span>
-                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"  data-target="modal2">
+                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                      data-target="modal2">
                       <span class="icon">
                         <i class="fas fa-info-circle"></i>
                       </span>
                       <span id="Actividad2">Ver Información</span>
                     </label>
                   </p>
-                  <p><i class="fa-solid fa-bullseye has-text-success"></i> 
-                  <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span></p>
+    
+                  <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                    <span class="tag" style="background-color: #4c9f38; color: white;">ODS 3</span>
                   </p>
-  
+    
                 </div>
+    
                 <footer class="card-footer">
                   <button class="card-footer-item button is-success is-light button-desapuntar">
                     <i class="fa-solid fa-check mr-2 "></i> Desapuntar
                   </button>
-  
                 </footer>
               </div>
             </div>
-            <div class="column is-4"
-            data-tipo="Social"
-            data-organizacion="Paris 365"
-            data-estado="En curso"
-            data-ods="5 9"
-            data-id="actividad3"
-            >
+            <div class="column is-4" data-tipo="Social" data-organizacion="Paris 365" data-estado="En curso" data-ods="5 9"
+              data-id="actividad3">
               <div class="card">
                 <div class="card-content">
                   <p class="title is-5">
                     <i class="fa-solid fa-utensils has-text-warning"></i> Voluntariado Comedor Social
-  
                   </p>
-  
-  
+    
                   <p class="subtitle is-6">
                     <i class="fa-solid fa-user has-text-info"></i> Responsable: Juan Martínez
                   </p>
-  
-  
+    
                   <p>
                     <i class="fa-solid fa-calendar has-text-primary"></i> Fecha Inicio: 5 de Abril
                   </p>
+    
                   <p>
                     <i class="fa-solid fa-calendar has-text-info-30"></i> Fecha Fin: 12 de Abril
                   </p>
-  
+    
                   <p>
-                    <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
-                      class="tag is-black">En Curso</span>
-                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal3">
+                    <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span class="tag is-black">En Curso</span>
+                    <label class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                      data-target="modal3">
                       <span class="icon">
                         <i class="fas fa-info-circle"></i>
                       </span>
                       <span id="Actividad3">Ver Información</span>
                     </label>
                   </p>
-                  <p><i class="fa-solid fa-bullseye has-text-success"></i> 
-                  <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span> 
-                  <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
+    
+                  <p><i class="fa-solid fa-bullseye has-text-success"></i>
+                    <span class="tag" style="background-color: #ff3a21; color: white;">ODS 5</span>
+                    <span class="tag" style="background-color: #fd6925; color: white;">ODS 9</span>
                   </p>
-                  </p>
-  
+    
                 </div>
+    
                 <footer class="card-footer">
                   <button class="card-footer-item button is-success is-light button-desapuntar">
                     <i class="fa-solid fa-check mr-2 "></i> Desapuntar
                   </button>
-  
                 </footer>
               </div>
             </div>
           </div>
-          </div>
         </div>
       </div>
     </main>
+
     <div>
       <a class="back-to-top" href="#top" id="backToTop">↑</a>
     </div>
+
     <footer class="footer mt-2">
       <div class="columns">
         <div class="column">
@@ -498,23 +421,22 @@
             <p>
               <a href="mailto:secretaria@cuatrovientos.org"
                 >secretaria@cuatrovientos.org</a
-              ><br />
+              ><br>
               Tel.: 948 12 41 29
             </p>
             <p>
-              Horario Curso Escolar:<br />
-              Lunes a viernes: 9:00 – 14:00 h<br />
+              Horario Curso Escolar:<br>
+              Lunes a viernes: 9:00 – 14:00 h<br>
               Martes: 15:30 – 18:00 h
             </p>
             <p>
-              Verano (de 15 junio a 15 septiembre): <br />
+              Verano (de 15 junio a 15 septiembre): <br>
               Lunes a viernes: 9:00 – 13:30
             </p>
           </div>
         </div>
         <div
-          class="column is-three-fifths is-flex is-align-items-center is-justify-content-center"
-        >
+          class="column is-three-fifths is-flex is-align-items-center is-justify-content-center">
           <div class="content has-text-centered">
             <div class="social-icons">
               <a
@@ -570,8 +492,7 @@
               <img
                 alt="Logo cuatrovientos"
                 class="footer-logo"
-                src="./images/LOGO4V.png"
-              />
+                src="./images/LOGO4V.png">
             </a>
           </div>
         </div>
@@ -587,7 +508,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script defer="" src="pagina_actividades_aceptadas.js" type="text/javascript"></script>
+    <script defer="" src="pagina_actividades_aceptadas.js"></script>
     <script src="validacionFormularios.js"></script>
   </body>
 </html>
