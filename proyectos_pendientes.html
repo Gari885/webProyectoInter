@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./bulma.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://kit.fontawesome.com/75419c7891.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body>
@@ -178,7 +180,7 @@
                 <div class="dropdown-item">
                   <label class="label">Tipo:</label>
                   <div class="select">
-                    <select>
+                    <select id="filtroTipo">
                       <option value="Todos">Todos</option>
                       <option value="Social">Social</option>
                       <option value="Educativo">Educativo</option>
@@ -191,39 +193,45 @@
                     </select>
                   </div>
                 </div>
+                
                 <div class="dropdown-item">
                   <label class="label">Participantes:</label>
-                  <input class="input" type="number" placeholder="Número total" min="0" required>
+                  <input class="input" type="number" placeholder="Número total" min="0" id="filtroParticipantes">
                 </div>
+                
                 <div class="dropdown-item">
-                  <label class="label">Estado:</label>
-                  <label class="radio">
-                    <input type="radio" name="answer">
-                    Activo
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="answer">
-                    Archivado
-                  </label>
+                  <button id="toggle-calendar" class="button is-link is-small">
+                    📅 Calendario
+                  </button>
+                  <div id="calendar-container" class="mt-2" style="display: none;">
+                    <label class="label">Selecciona una fecha</label>
+                    <div class="control">
+                      <input id="datepicker" class="input" type="text" placeholder="Selecciona una fecha">
+                    </div>
+                  </div>
                 </div>
+                
                 <div class="dropdown-item">
-                  <a class="button is-link is-fullwidth" href="#">Aplicar Filtros</a>
+                  <a class="button is-link is-fullwidth" id="aplicarFiltrosBtn" href="#">Aplicar Filtros</a>
                 </div>
+                
               </div>
             </div>
-            <div class="dropdown is-right" id="Ordenar">
-              <div class="dropdown-trigger">
-                <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu">
-                  <span>Orden</span>
-                  <span class="icon is-small">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
-                <div>
-                  <a href="#" class="dropdown-item">Ascendente</a>
-                  <a href="#" class="dropdown-item">Descendente</a>
+            <div class="level-right">
+              <div class="dropdown is-right" id="ordenDropdown">
+                <div class="dropdown-trigger">
+                  <button class="button is-link has-text-white" aria-haspopup="true" aria-controls="dropdown-order-menu" id="ordenTrigger">
+                    <span>Orden</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu dropdown-content" id="dropdown-order-menu" role="menu">
+                  <div>
+                    <a href="#" class="dropdown-item" id="ordenAsc">Ascendente</a>
+                    <a href="#" class="dropdown-item" id="ordenDesc">Descendente</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -232,7 +240,11 @@
 
         <div class="columns is-multiline">
           <div class="column is-4">
-            <div class="card">
+            <div class="card"
+            data-tipo="Salud"
+            data-participantes=8
+            data-fecha="2025-02-02"
+            data-id="proyecto1">
               <div class="card-content">
                 <p class="title is-5">
                   <i class="fa-solid fa-sun has-text-warning"></i> Voluntariado en Hospital
@@ -253,11 +265,11 @@
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                     class="tag is-warning">Pendiente</span>
                   <label for="modalCheckboxProyecto1"
-                    class="button is-info is-small is-light has-text-weight-bold ml-2">
-                    <span class="icon">
+                  class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal1">
+                  <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span>Ver Información</span>
+                    <span id="Proyecto1">Ver Información</span>
                   </label>
                 </p>
 
@@ -274,7 +286,11 @@
             </div>
           </div>
 
-          <div class="column is-4">
+          <div class="column is-4"
+          data-tipo="Ambiental"
+          data-participantes=3
+          data-fecha="2025-02-27"
+          data-id="proyecto2">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -293,11 +309,11 @@
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                     class="tag is-warning">Pendiente</span>
                   <label for="modalCheckboxProyecto2"
-                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                  class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal2">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span>Ver Información</span>
+                    <span id="Proyecto2">Ver Información</span>
                   </label>
                 </p>
 
@@ -314,7 +330,11 @@
             </div>
           </div>
 
-          <div class="column is-4">
+          <div class="column is-4"
+          data-tipo="Social"
+          data-participantes=5
+          data-fecha="2025-02-18"
+          data-id="proyecto3">
             <div class="card">
               <div class="card-content">
                 <p class="title is-5">
@@ -331,11 +351,11 @@
                   <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                     class="tag is-warning">Pendiente</span>
                   <label for="modalCheckboxProyecto3"
-                    class="button is-info is-small is-light has-text-weight-bold ml-2">
+                  class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger" data-target="modal3">
                     <span class="icon">
                       <i class="fas fa-info-circle"></i>
                     </span>
-                    <span>Ver Información</span>
+                    <span id="Proyecto1">Ver Información</span>
                   </label>
                 </p>
               </div>
@@ -349,19 +369,13 @@
               </footer>
             </div>
           </div>
-
-
-
         </div>
       </div>
     </div>
   </main>
 
-  <input type="checkbox" id="modalCheckboxProyecto1" class="is-hidden">
-  <input type="checkbox" id="modalCheckboxProyecto2" class="is-hidden">
-  <input type="checkbox" id="modalCheckboxProyecto3" class="is-hidden">
 
-  <div class="modal modal-proyecto" id="modalProyecto1">
+  <div class="modal modal-proyecto" id="modal1">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
@@ -380,7 +394,7 @@
     </div>
   </div>
 
-  <div class="modal modal-proyecto" id="modalProyecto2">
+  <div class="modal modal-proyecto" id="modal2">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
@@ -398,7 +412,7 @@
     </div>
   </div>
 
-  <div class="modal modal-proyecto" id="modalProyecto3">
+  <div class="modal modal-proyecto" id="modal3">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
@@ -480,8 +494,7 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript" src="funcionalidades.js" defer></script>
+  <script type="text/javascript" src="proyectos_pendientes.js" defer></script>
   <script src="validacionFormularios.js"></script>
 </body>
-
 </html>

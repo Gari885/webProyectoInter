@@ -179,40 +179,55 @@
                             </div>
                             <div class="dropdown-menu dropdown-content" id="dropdown-menu" role="menu">
                                 <div class="dropdown-item">
-                                    <label class="label">Tipo:</label>
-                                    <div class="select">
-                                        <select>
-                                            <option value="Todos">Todos</option>
-                                            <option value="Social">Social</option>
-                                            <option value="Educativo">Educativo</option>
-                                            <option value="Cultural">Cultural</option>
-                                            <option value="Ambiental">Ambiental</option>
-                                            <option value="Salud">Salud</option>
-                                            <option value="Internacional">Internacional</option>
-                                            <option value="Deportivo">Deportivo</option>
-                                            <option value="Digital">Digital</option>
-                                        </select>
+                                  <label class="label">Tipo:</label>
+                                  <div class="select">
+                                    <select id="filtroTipo">
+                                      <option value="Todos">Todos</option>
+                                      <option value="Social">Social</option>
+                                      <option value="Educativo">Educativo</option>
+                                      <option value="Cultural">Cultural</option>
+                                      <option value="Ambiental">Ambiental</option>
+                                      <option value="Salud">Salud</option>
+                                      <option value="Internacional">Internacional</option>
+                                      <option value="Deportivo">Deportivo</option>
+                                      <option value="Digital">Digital</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="dropdown-item">
+                                  <label class="label">Participantes:</label>
+                                  <input id="filtroParticipantes" class="input" type="number" placeholder="Número total" min="0">
+                                </div>
+                                <div class="dropdown-item">
+                                    <button id="toggle-calendar" class="button is-link is-small">
+                                      📅 Calendario
+                                    </button>
+                                    <div id="calendar-container" class="mt-2" style="display: none;">
+                                      <label class="label">Selecciona una fecha</label>
+                                      <div class="control">
+                                        <input id="datepicker" class="input" type="text" placeholder="Selecciona una fecha">
+                                      </div>
                                     </div>
+                                  </div>
+                                <div class="dropdown-item">
+                                  <label class="label">Estado:</label>
+                                  <label class="radio">
+                                    <input type="radio" name="filtroEstado" value="activo">
+                                    Activo
+                                  </label>
+                                  <label class="radio">
+                                    <input type="radio" name="filtroEstado" value="archivado">
+                                    Archivado
+                                  </label>
                                 </div>
                                 <div class="dropdown-item">
-                                    <label class="label">Participantes:</label>
-                                    <input class="input" type="number" placeholder="Número total" min="0" required>
+                                  <a id="aplicarFiltrosBtn" href="#" class="button is-link is-fullwidth">Aplicar Filtros</a>
                                 </div>
                                 <div class="dropdown-item">
-                                    <label class="label">Estado:</label>
-                                    <label class="radio">
-                                        <input type="radio" name="answer">
-                                        Activo
-                                    </label>
-                                    <label class="radio">
-                                        <input type="radio" name="answer">
-                                        Archivado
-                                    </label>
-                                </div>
-                                <div class="dropdown-item">
-                                    <a href="#" class="button is-link is-fullwidth">Aplicar Filtros</a>
-                                </div>
-                            </div>
+                                    <a id="limpiarFiltrosBtn" href="#" class="button is-light is-fullwidth">Limpiar Filtros</a>
+                                  </div>
+                                  
+                              </div>                              
                         </div>
                         <div class="dropdown is-right" id="Ordenar">
                             <div class="dropdown-trigger">
@@ -237,7 +252,15 @@
                 <div class="container">
                     <div class="columns is-multiline">
                         <div class="column is-4">
-                            <div class="card">
+                            <div class="card"
+                            data-tipo="Educativo"
+                            data-participantes=3
+                            data-fecha="2025-02-10"
+                            data-id="proyecto1"
+                            data-estado="activo"
+                            >
+
+                                
                                 <div class="card-content">
                                     <p class="title is-5">
                                         <i class="fa-solid fa-book-open has-text-primary"></i> Apoyo Escolar
@@ -264,10 +287,10 @@
 
                                 </div>
                                 <footer class="card-footer">
-                                    <label for="modalCheckboxProyectoMiembros1"
-                                        class="card-footer-item button is-success is-light">
+                                    <button class="card-footer-item button is-success is-light modal-trigger" data-target="ProyectoMiembros1">
                                         <i class="fa-solid fa-user mr-2"></i> Administrar miembros
-                                    </label>
+                                      </button>
+                                      
                                     <button class="card-footer-item button is-danger is-light">
                                         <i class="fa-solid fa-folder-open mr-2"></i> Archivar Proyecto
                                     </button>
@@ -275,7 +298,6 @@
                             </div>
                         </div>
 
-                        <input type="checkbox" id="modalCheckboxProyectoMiembros1" class="modal-checkbox" hidden>
 
                         <div class="modal" id="ProyectoMiembros1">
                             <div class="modal-background"></div>
@@ -290,7 +312,7 @@
                                         <div class="column">
                                             <label class="label navy">Voluntarios en el proyecto</label>
                                             <div class="box">
-                                                <ul id="userList">
+                                                <ul id="userList1">
                                                     <li>Rafa Mora</li>
                                                     <li>Peter Smith</li>
                                                     <li>Alejadra De Lope</li>
@@ -303,7 +325,7 @@
                                                 <label class="label">Añadir voluntario</label>
                                                 <div class="control">
                                                     <div class="select">
-                                                        <select>
+                                                        <select id="addUser1">
                                                             <option>Seleccionar usuario</option>
                                                             <option>Juan Pérez</option>
                                                             <option>María López</option>
@@ -315,7 +337,7 @@
                                                 <label class="label">Eliminar voluntario</label>
                                                 <div class="control">
                                                     <div class="select">
-                                                        <select>
+                                                        <select id="removeUser1">
                                                             <option>Seleccionar usuario</option>
                                                             <option>Alejandra De Lope</option>
                                                             <option>Peter Smith</option>
@@ -328,13 +350,12 @@
                                     </div>
                                 </div>
                                 <footer class="modal-card-foot">
-                                    <button class="button is-link">Guardar</button>
+                                    <button class="button is-link guardar-miembros">Guardar</button>
                                 </footer>
                             </div>
                         </div>
 
 
-                        <input type="checkbox" id="modalCheckboxProyectoInfo1" class="is-hidden">
 
                         <div class="modal modal-proyecto" id="ProyectoInfo1">
                             <div class="modal-background"></div>
@@ -421,6 +442,7 @@
             </div>
         </div>
     </footer>
+    <script src="gestion_proyectos.js" defer></script>
     <script src="validacionFormularios.js"></script>
 </body>
 </html>

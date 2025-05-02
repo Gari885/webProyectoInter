@@ -127,7 +127,7 @@ flatpickr("#datepicker", {
 // =====================
 const ordenAscBtn = document.getElementById("ordenAsc");
 const ordenDescBtn = document.getElementById("ordenDesc");
-const contenedorTarjetas = document.querySelector(".columns.is-multiline.mt-3");
+const contenedorTarjetas = document.querySelector(".columns.is-multiline");
 
 function ordenarTarjetas(asc = true) {
   const tarjetas = Array.from(contenedorTarjetas.querySelectorAll(".column.is-4"));
