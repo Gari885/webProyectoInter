@@ -18,7 +18,8 @@
                     <a class="navbar-item" href="./index.html">
                         <img src="./images/LOGO4V.png" alt="Logo cuatrovientos">
                     </a>
-                    <a class="navbar-burger" data-target="navegador" role="button" aria-label="menu" aria-expanded="false">
+                    <a class="navbar-burger" data-target="navegador" role="button" aria-label="menu"
+                        aria-expanded="false">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
@@ -32,7 +33,8 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <figure class="image is-48x48px">
-                                            <img class="is-rounded" src="./images/FOTO-PERFIL.png" alt="Foto perfil de usuario">
+                                            <img class="is-rounded" src="./images/FOTO-PERFIL.png"
+                                                alt="Foto perfil de usuario">
                                         </figure>
                                     </div>
                                     <div class="media-content">
@@ -128,7 +130,7 @@
             </nav>
         </div>
     </header>
-    
+
     <main class="has-background-white">
         <div id="actualidad" class="section">
             <div class="container">
@@ -179,55 +181,59 @@
                             </div>
                             <div class="dropdown-menu dropdown-content" id="dropdown-menu" role="menu">
                                 <div class="dropdown-item">
-                                  <label class="label">Tipo:</label>
-                                  <div class="select">
-                                    <select id="filtroTipo">
-                                      <option value="Todos">Todos</option>
-                                      <option value="Social">Social</option>
-                                      <option value="Educativo">Educativo</option>
-                                      <option value="Cultural">Cultural</option>
-                                      <option value="Ambiental">Ambiental</option>
-                                      <option value="Salud">Salud</option>
-                                      <option value="Internacional">Internacional</option>
-                                      <option value="Deportivo">Deportivo</option>
-                                      <option value="Digital">Digital</option>
-                                    </select>
-                                  </div>
+                                    <label class="label">Tipo:</label>
+                                    <div class="select">
+                                        <select id="filtroTipo">
+                                            <option value="Todos">Todos</option>
+                                            <option value="Social">Social</option>
+                                            <option value="Educativo">Educativo</option>
+                                            <option value="Cultural">Cultural</option>
+                                            <option value="Ambiental">Ambiental</option>
+                                            <option value="Salud">Salud</option>
+                                            <option value="Internacional">Internacional</option>
+                                            <option value="Deportivo">Deportivo</option>
+                                            <option value="Digital">Digital</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="dropdown-item">
-                                  <label class="label">Participantes:</label>
-                                  <input id="filtroParticipantes" class="input" type="number" placeholder="Número total" min="0">
+                                    <label class="label">Participantes:</label>
+                                    <input id="filtroParticipantes" class="input" type="number"
+                                        placeholder="Número total" min="0">
                                 </div>
                                 <div class="dropdown-item">
                                     <button id="toggle-calendar" class="button is-link is-small">
-                                      📅 Calendario
+                                        📅 Calendario
                                     </button>
                                     <div id="calendar-container" class="mt-2" style="display: none;">
-                                      <label class="label">Selecciona una fecha</label>
-                                      <div class="control">
-                                        <input id="datepicker" class="input" type="text" placeholder="Selecciona una fecha">
-                                      </div>
+                                        <label class="label">Selecciona una fecha</label>
+                                        <div class="control">
+                                            <input id="datepicker" class="input" type="text"
+                                                placeholder="Selecciona una fecha">
+                                        </div>
                                     </div>
-                                  </div>
-                                <div class="dropdown-item">
-                                  <label class="label">Estado:</label>
-                                  <label class="radio">
-                                    <input type="radio" name="filtroEstado" value="activo">
-                                    Activo
-                                  </label>
-                                  <label class="radio">
-                                    <input type="radio" name="filtroEstado" value="archivado">
-                                    Archivado
-                                  </label>
                                 </div>
                                 <div class="dropdown-item">
-                                  <a id="aplicarFiltrosBtn" href="#" class="button is-link is-fullwidth">Aplicar Filtros</a>
+                                    <label class="label">Estado:</label>
+                                    <label class="radio">
+                                        <input type="radio" name="filtroEstado" value="activo">
+                                        Activo
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="filtroEstado" value="archivado">
+                                        Archivado
+                                    </label>
                                 </div>
                                 <div class="dropdown-item">
-                                    <a id="limpiarFiltrosBtn" href="#" class="button is-light is-fullwidth">Limpiar Filtros</a>
-                                  </div>
-                                  
-                              </div>                              
+                                    <a id="aplicarFiltrosBtn" href="#" class="button is-link is-fullwidth">Aplicar
+                                        Filtros</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a id="limpiarFiltrosBtn" href="#" class="button is-light is-fullwidth">Limpiar
+                                        Filtros</a>
+                                </div>
+
+                            </div>
                         </div>
                         <div class="dropdown is-right" id="Ordenar">
                             <div class="dropdown-trigger">
@@ -251,15 +257,11 @@
 
                 <div class="container">
                     <div class="columns is-multiline">
-                        <div class="column is-4"
-                        data-tipo="Educativo"
-                        data-participantes="3"
-                        data-fecha="2025-02-10"
-                        data-id="proyecto1"
-                        data-estado="activo">
+                        <div class="column is-4" data-tipo="Educativo" data-participantes="3" data-fecha="2025-02-10"
+                            data-id="proyecto1" data-estado="activo">
                             <div class="card">
 
-                                
+
                                 <div class="card-content">
                                     <p class="title is-5">
                                         <i class="fa-solid fa-book-open has-text-primary"></i> Apoyo Escolar
@@ -269,6 +271,7 @@
                                     <p class="subtitle is-6">
                                         <i class="fa-solid fa-user has-text-info"></i> Responsable: Juan Dominguez
                                     </p>
+
                                     <p>
                                         <i class="fa-solid fa-calendar has-text-primary"></i> Fecha actividad: 10 de
                                         febrero
@@ -277,8 +280,9 @@
                                     <p>
                                         <i class="fa-solid fa-thumbtack has-text-danger"></i> Estado: <span
                                             class="tag is-info">En curso</span>
-                                        <input type="checkbox" id="modalCheckboxProyectoInfo1" class="is-hidden">
-                                        <label for="modalCheckboxProyectoInfo1" class="button is-info is-small is-light has-text-weight-bold ml-2">
+                                        <label
+                                            class="button is-info is-small is-light has-text-weight-bold ml-2 modal-trigger"
+                                            data-target="ProyectoInfo1">
                                             <span class="icon">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
@@ -288,10 +292,11 @@
 
                                 </div>
                                 <footer class="card-footer">
-                                    <button class="card-footer-item button is-success is-light modal-trigger" data-target="ProyectoMiembros1">
+                                    <button class="card-footer-item button is-success is-light modal-trigger"
+                                        data-target="ProyectoMiembros1">
                                         <i class="fa-solid fa-user mr-2"></i> Administrar miembros
-                                      </button>
-                                      
+                                    </button>
+
                                     <button class="card-footer-item button is-danger is-light">
                                         <i class="fa-solid fa-folder-open mr-2"></i> Archivar Proyecto
                                     </button>
@@ -306,7 +311,8 @@
                                 <header class="modal-card-head">
                                     <p class="modal-card-title">Administrar Miembros</p>
                                     <input type="checkbox" id="modalCheckboxProyectoMiembros1" class="is-hidden">
-                                    <label for="modalCheckboxProyectoMiembros1" class="delete" aria-label="close"></label>
+                                    <label for="modalCheckboxProyectoMiembros1" class="delete"
+                                        aria-label="close"></label>
                                 </header>
                                 <div class="modal-card-body">
                                     <div class="columns">
@@ -367,8 +373,10 @@
                                 </header>
                                 <div class="modal-card-body">
                                     <p><span class="has-text-weight-bold">Nombre:</span> Apoyo Escolar</p>
-                                    <p><span class="has-text-weight-bold">Organización:</span> Fundación San Cebrián </p>
-                                    <p><span class="has-text-weight-bold">Contacto:</span> juan.dominguez@fundacionsancebrian.es </p>
+                                    <p><span class="has-text-weight-bold">Organización:</span> Fundación San Cebrián
+                                    </p>
+                                    <p><span class="has-text-weight-bold">Contacto:</span>
+                                        juan.dominguez@fundacionsancebrian.es </p>
                                     <p><span class="has-text-weight-bold">Fecha propuesta:</span> 10 de febrero</p>
                                     <p><span class="has-text-weight-bold">Nº voluntarios:</span> 3</p>
                                     <p><span class="has-text-weight-bold">Descripción:</span> Se necesitan voluntarios
@@ -383,7 +391,7 @@
         <p id="no-results" class="has-text-centered has-text-grey mt-4 mb-4" style="display: none;">
             No se encontraron proyectos con los filtros seleccionados.
         </p>
-          
+
     </main>
 
     <div>
@@ -450,4 +458,5 @@
     <script src="gestion_proyectos.js" defer></script>
     <script src="validacionFormularios.js"></script>
 </body>
+
 </html>
